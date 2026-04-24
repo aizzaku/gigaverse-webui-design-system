@@ -26,7 +26,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build docs (static export)
-        run: pnpm turbo run build --filter=docs...
+        run: pnpm turbo run build --filter=@gigaverse/docs...
         env:
           EXPORT: '1'
           BASE_PATH: '/gigaverse-webui-design-system'
