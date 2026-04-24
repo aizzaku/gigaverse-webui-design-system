@@ -55,6 +55,7 @@ export * from './components/landing-modal-shell'
 
 // Pixel art border variants
 export * from './components/pixel-border'
+export * from './components/pixel-factions'
 export * from './components/pixel-card'
 export * from './components/pixel-button'
 export * from './components/pixel-badge'

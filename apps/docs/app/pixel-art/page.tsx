@@ -10,6 +10,8 @@ import {
   Switch,
   Slider,
   StepProgressBar,
+  FactionBadge,
+  FactionJoinButton,
   Pagination, PaginationContent, PaginationItem, PaginationLink,
   PaginationPrevious, PaginationNext, PaginationEllipsis,
   Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,
@@ -26,6 +28,8 @@ import {
   PixelLoadingBar,
   PixelBorder,
   PixelProgress,
+  PixelFactionBadge,
+  PixelFactionJoinButton,
   PixelPagination, PixelPaginationContent, PixelPaginationItem, PixelPaginationLink,
   PixelPaginationPrevious, PixelPaginationNext, PixelPaginationEllipsis,
   PixelCarousel, PixelCarouselContent, PixelCarouselItem,
@@ -46,14 +50,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <p className="font-bitcell text-[10px] tracking-[3px] uppercase text-giga-muted mb-3">
       {children}
     </p>
-  )
-}
-
-function ColHeader({ children, accent = false }: { children: React.ReactNode; accent?: boolean }) {
-  return (
-    <h2 className={`font-bitcell text-[14px] tracking-[2px] uppercase ${accent ? 'text-giga-cyan' : 'text-giga-gold'}`}>
-      {children}
-    </h2>
   )
 }
 
@@ -92,8 +88,8 @@ export default function PixelArtPage() {
 
       {/* Column headers */}
       <div className="grid grid-cols-2 gap-8 border-b border-giga-gold/30 pb-3">
-        <ColHeader>Current (Rounded)</ColHeader>
-        <ColHeader accent>Pixel Art (Notched)</ColHeader>
+        <h2 className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-gold">Current (Rounded)</h2>
+        <h2 className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-cyan">Pixel Art (Notched)</h2>
       </div>
 
       {/* ── CARDS ── */}
@@ -177,20 +173,39 @@ export default function PixelArtPage() {
         }
       />
 
-      {/* ── FACTION BADGES ── */}
+      {/* ── FACTION CHIPS ── */}
       <CompareRow
-        label="Faction Badges"
+        label="Faction Chips"
         original={
           <div className="flex flex-wrap gap-2">
             {ALL_FACTIONS.map((f) => (
-              <Badge key={f} variant="faction" faction={f} className="capitalize">{f}</Badge>
+              <FactionBadge key={f} faction={f} />
             ))}
           </div>
         }
         pixel={
           <div className="flex flex-wrap gap-2">
             {ALL_FACTIONS.map((f) => (
-              <PixelBadge key={f} variant="faction" faction={f} className="capitalize">{f}</PixelBadge>
+              <PixelFactionBadge key={f} faction={f} />
+            ))}
+          </div>
+        }
+      />
+
+      {/* ── FACTION JOIN BUTTONS ── */}
+      <CompareRow
+        label="Faction Join Buttons"
+        original={
+          <div className="flex flex-wrap gap-2">
+            {ALL_FACTIONS.map((f) => (
+              <FactionJoinButton key={f} faction={f} />
+            ))}
+          </div>
+        }
+        pixel={
+          <div className="flex flex-wrap gap-2">
+            {ALL_FACTIONS.map((f) => (
+              <PixelFactionJoinButton key={f} faction={f} />
             ))}
           </div>
         }
@@ -288,19 +303,19 @@ export default function PixelArtPage() {
             <PixelChevronRight className="h-4 w-4 text-giga-muted" />
             <PixelChevronUp className="h-4 w-4 text-giga-muted" />
             <PixelChevronDown className="h-4 w-4 text-giga-muted" />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase">icons</span>
+            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">icons</span>
           </div>
           <div className="flex items-center gap-2">
             <PixelArrowButton direction="left" />
             <PixelArrowButton direction="right" />
             <PixelArrowButton direction="up" />
             <PixelArrowButton direction="down" />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase">buttons</span>
+            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">buttons</span>
           </div>
           <div className="flex items-center gap-2">
             <PixelArrowButton direction="left" disabled />
             <PixelArrowButton direction="right" disabled />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase">disabled</span>
+            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">disabled</span>
           </div>
         </div>
       </div>
@@ -316,7 +331,7 @@ export default function PixelArtPage() {
         pixel={
           <div className="w-64 flex flex-col gap-5">
             <PixelStepProgressBar steps={STEPS} current={1} />
-            <PixelProgress value={65} className="h-4 w-full" />
+            <PixelProgress value={65} className="h-3 w-full" />
           </div>
         }
       />
@@ -324,30 +339,30 @@ export default function PixelArtPage() {
       {/* ── BLOCK PROGRESS / LOADING ── */}
       <div className="py-6 border-b border-giga-border/20">
         <SectionLabel>Pixel Art — Block Progress &amp; Loading Bars</SectionLabel>
-        <div className="flex flex-col gap-5 max-w-sm">
+        <div className="flex flex-col gap-4 max-w-sm">
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">GOLD — 7/10</p>
-            <PixelBlockProgress segments={10} filled={7} color="gold" />
+            <PixelBlockProgress segments={10} filled={7} color="gold" blockHeight="h-3" />
           </div>
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">CYAN — 4/10</p>
-            <PixelBlockProgress segments={10} filled={4} color="cyan" />
+            <PixelBlockProgress segments={10} filled={4} color="cyan" blockHeight="h-3" />
           </div>
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">GREEN — 9/10</p>
-            <PixelBlockProgress segments={10} filled={9} color="green" />
+            <PixelBlockProgress segments={10} filled={9} color="green" blockHeight="h-3" />
           </div>
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LIVE — 3/8</p>
-            <PixelBlockProgress segments={8} filled={3} color="live" blockHeight="h-6" />
+            <PixelBlockProgress segments={8} filled={3} color="live" blockHeight="h-4" />
           </div>
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LOADING (animated)</p>
-            <PixelLoadingBar segments={12} color="gold" />
+            <PixelLoadingBar segments={12} color="gold" blockHeight="h-3" />
           </div>
           <div>
             <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LOADING CYAN</p>
-            <PixelLoadingBar segments={12} color="cyan" speed={900} />
+            <PixelLoadingBar segments={12} color="cyan" blockHeight="h-3" speed={900} />
           </div>
         </div>
       </div>
@@ -385,11 +400,11 @@ export default function PixelArtPage() {
       <CompareRow
         label="Carousel"
         original={
-          <div className="w-full max-w-xs px-12">
-            <Carousel>
+          <div className="relative w-full px-14">
+            <Carousel opts={{ align: 'start' }}>
               <CarouselContent>
                 {['Card A', 'Card B', 'Card C'].map((label) => (
-                  <CarouselItem key={label}>
+                  <CarouselItem key={label} className="basis-[80%]">
                     <Card variant="standard" padding="md" className="text-center">
                       <CardTitle>{label}</CardTitle>
                       <CardDescription>Slide content</CardDescription>
@@ -403,11 +418,11 @@ export default function PixelArtPage() {
           </div>
         }
         pixel={
-          <div className="w-full max-w-xs px-14">
-            <PixelCarousel>
+          <div className="relative w-full px-14">
+            <PixelCarousel opts={{ align: 'start' }}>
               <PixelCarouselContent>
                 {['Card A', 'Card B', 'Card C'].map((label) => (
-                  <PixelCarouselItem key={label}>
+                  <PixelCarouselItem key={label} className="basis-[80%]">
                     <PixelCard variant="standard" padding="md" className="text-center">
                       <PixelCardTitle>{label}</PixelCardTitle>
                       <PixelCardDescription>Slide content</PixelCardDescription>
@@ -422,7 +437,7 @@ export default function PixelArtPage() {
         }
       />
 
-      {/* ── PIXEL BORDER GENERIC ── */}
+      {/* ── GENERIC PIXEL BORDER ── */}
       <div className="py-6">
         <SectionLabel>Pixel Border — Generic Section Wrapper</SectionLabel>
         <div className="flex flex-col gap-4 max-w-lg">
@@ -433,7 +448,7 @@ export default function PixelArtPage() {
             <p className="font-m5x7 text-[14px] text-giga-muted">Gold pixel border</p>
           </PixelBorder>
           <PixelBorder size="sm" borderClass="border-giga-cyan/60" className="p-3 bg-giga-panel/40">
-            <p className="font-m5x7 text-[14px] text-giga-muted">Small (4px) cyan — for tooltips / compact panels</p>
+            <p className="font-m5x7 text-[14px] text-giga-muted">Small (4px) cyan — tooltips / compact panels</p>
           </PixelBorder>
         </div>
       </div>

@@ -20,7 +20,7 @@ export const pixelButtonVariants = cva(pixelButtonBase, {
   variants: {
     variant: {
       primary:
-        'border-giga-gold text-giga-button-text font-bold bg-giga-gold-pixel-grad shadow-giga-bevel ' +
+        'border-giga-gold text-giga-button-text font-bold bg-giga-gold-grad shadow-giga-bevel ' +
         'hover:opacity-90 focus-visible:ring-giga-gold/40',
       secondary:
         'border-giga-cyan bg-giga-panel/80 text-giga-cyan ' +

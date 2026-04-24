@@ -40,7 +40,7 @@ export function factionShinyPixelGradient(name: FactionName): string {
 }
 
 export const gradients = {
-  gold: 'linear-gradient(180deg, #ffe070 0%, #f0c040 48%, #d8a020 52%, #c08010 100%)',
+  gold: 'linear-gradient(180deg, #ffe070 0%, #f0c040 50%, #d8a020 50%, #c08010 100%)',
   goldPixel: 'linear-gradient(180deg, #ffe070 0%, #f0c040 50%, #d8a020 50%, #c08010 100%)',
   goldAccept: 'linear-gradient(180deg, #F5D06B 0%, #E89B0C 100%)',
   progress: 'linear-gradient(90deg, #F5C563, #0483AB)',
