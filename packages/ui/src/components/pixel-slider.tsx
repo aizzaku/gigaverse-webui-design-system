@@ -18,7 +18,7 @@ export const PixelSlider = React.forwardRef<
   >
     <SliderPrimitive.Track
       className={cn(
-        'relative h-2 w-full grow rounded-none bg-giga-panel',
+        'relative h-4 w-full grow rounded-none bg-giga-panel',
         TRACK_Y,
         'border-giga-border',
       )}
