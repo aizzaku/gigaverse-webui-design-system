@@ -195,7 +195,7 @@ export default function PixelArtPage() {
           </>
         }
         pixel={
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-6">
             <PixelButton variant="primary">Primary</PixelButton>
             <PixelButton variant="secondary">Secondary</PixelButton>
             <PixelButton variant="ghost">Ghost</PixelButton>
@@ -221,7 +221,7 @@ export default function PixelArtPage() {
           </>
         }
         pixel={
-          <>
+          <div className="flex flex-wrap gap-4">
             <PixelBadge variant="gold">Gold</PixelBadge>
             <PixelBadge variant="cyan">Cyan</PixelBadge>
             <PixelBadge variant="green">Green</PixelBadge>
@@ -231,7 +231,7 @@ export default function PixelArtPage() {
             <PixelBadge variant="rarity" rarity="epic">Epic</PixelBadge>
             <PixelBadge variant="rarity" rarity="legendary">Legendary</PixelBadge>
             <PixelBadge variant="rarity" rarity="giga">Giga</PixelBadge>
-          </>
+          </div>
         }
       />
 
