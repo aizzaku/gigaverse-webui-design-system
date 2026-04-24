@@ -120,30 +120,10 @@ export default function PixelArtPage() {
   return (
     <main className="mx-auto max-w-[1280px] px-10 py-14">
 
-      {/* ── PAGE HEADER ── */}
-      <div className="mb-10 pb-8 border-b border-giga-border/30">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="font-bitcell text-[26px] tracking-[3px] uppercase text-giga-heading mb-2">
-              Pixel Art Borders
-            </h1>
-            <p className="font-m5x7 text-[15px] text-giga-muted max-w-xl leading-relaxed">
-              8bitcn-inspired NES-style notched corners vs. our current rounded system.
-              Same color tokens — only the border treatment changes.
-              Drop a vote in <span className="text-giga-cyan font-semibold">#design-system</span>.
-            </p>
-          </div>
-          <div className="flex flex-col gap-1 text-right shrink-0">
-            <span className="font-bitcell text-[10px] tracking-[2px] uppercase text-giga-muted/50">branch</span>
-            <span className="font-m5x7 text-[13px] text-giga-cyan">feature/pixel-art-borders</span>
-          </div>
-        </div>
-
-        {/* Column key */}
-        <div className="grid grid-cols-2 gap-10 mt-8">
-          <ColLabel>Current — Rounded Corners</ColLabel>
-          <ColLabel accent>Pixel Art — Notched Corners</ColLabel>
-        </div>
+      {/* ── COLUMN LABELS ── */}
+      <div className="grid grid-cols-2 gap-10 mb-8 pb-6 border-b border-giga-border/30">
+        <ColLabel>Current — Rounded Corners</ColLabel>
+        <ColLabel accent>Pixel Art — Notched Corners</ColLabel>
       </div>
 
       {/* ── CARDS ── */}
