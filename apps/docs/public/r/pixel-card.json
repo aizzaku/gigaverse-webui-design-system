@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-card",
+  "type": "registry:ui",
+  "description": "Pixel-bordered card — 4 variants (standard, gold, recessed, stat) with 6px block borders.",
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/pixel-card.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '../lib/cn'\n\nconst PIXEL_Y = 'border-y-[6px]'\nconst PIXEL_X = '-mx-[6px] border-x-[6px]'\n\nexport const pixelCardVariants = cva(\n  'relative rounded-none font-bitcell text-white ' + PIXEL_Y,\n  {\n    variants: {\n      variant: {\n        standard: 'border-giga-teal/60 bg-giga-dark-card/85',\n        gold: 'border-giga-gold bg-giga-dark-card/85',\n        recessed: 'border-giga-border/50 bg-giga-dark-card/50',\n        stat: 'border-giga-teal/30 bg-giga-dark-card/92',\n      },\n      padding: {\n        none: 'p-0',\n        sm: 'p-3',\n        md: 'p-5',\n        lg: 'p-6',\n      },\n    },\n    defaultVariants: { variant: 'standard', padding: 'md' },\n  },\n)\n\nexport interface PixelCardProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof pixelCardVariants> {}\n\nexport const PixelCard = React.forwardRef<HTMLDivElement, PixelCardProps>(\n  ({ className, variant, padding, children, ...props }, ref) => {\n    const borderColor =\n      variant === 'gold'\n        ? 'border-giga-gold'\n        : variant === 'recessed'\n          ? 'border-giga-border/50'\n          : variant === 'stat'\n            ? 'border-giga-teal/30'\n            : 'border-giga-teal/60'\n\n    return (\n      <div ref={ref} className={cn(pixelCardVariants({ variant, padding }), className)} {...props}>\n        <div\n          className={cn('absolute inset-0 pointer-events-none', PIXEL_X, borderColor)}\n          aria-hidden\n        />\n        {children}\n      </div>\n    )\n  },\n)\nPixelCard.displayName = 'PixelCard'\n\nexport const PixelCardHeader = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn('flex flex-col gap-1', className)} {...props} />\n))\nPixelCardHeader.displayName = 'PixelCardHeader'\n\nexport const PixelCardTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn('text-[20px] text-giga-heading tracking-wide', className)}\n    {...props}\n  />\n))\nPixelCardTitle.displayName = 'PixelCardTitle'\n\nexport const PixelCardDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <p ref={ref} className={cn('text-[14px] text-giga-muted', className)} {...props} />\n))\nPixelCardDescription.displayName = 'PixelCardDescription'\n\nexport const PixelCardContent = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn('mt-3', className)} {...props} />\n))\nPixelCardContent.displayName = 'PixelCardContent'\n\nexport const PixelCardFooter = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement>\n>(({ className, ...props }, ref) => (\n  <div ref={ref} className={cn('mt-4 flex items-center gap-4', className)} {...props} />\n))\nPixelCardFooter.displayName = 'PixelCardFooter'\n",
+      "type": "registry:ui",
+      "target": "components/ui/pixel-card.tsx"
+    }
+  ]
+}

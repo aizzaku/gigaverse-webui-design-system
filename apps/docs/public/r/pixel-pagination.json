@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-pagination",
+  "type": "registry:ui",
+  "description": "Pixel-bordered pagination — block-border prev/next with staircase chevrons.",
+  "dependencies": [
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "pixel-arrows"
+  ],
+  "files": [
+    {
+      "path": "components/ui/pixel-pagination.tsx",
+      "content": "import * as React from 'react'\nimport { MoreHorizontal } from 'lucide-react'\nimport { cn } from '../lib/cn'\nimport { PixelChevronLeft, PixelChevronRight } from './pixel-arrows'\n\nconst PIXEL_Y = 'border-y-[4px]'\nconst PIXEL_X = '-mx-[4px] border-x-[4px]'\n\nexport const PixelPagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (\n  <nav\n    role=\"navigation\"\n    aria-label=\"pagination\"\n    className={cn('mx-auto flex w-full justify-center', className)}\n    {...props}\n  />\n)\nPixelPagination.displayName = 'PixelPagination'\n\nexport const PixelPaginationContent = React.forwardRef<\n  HTMLUListElement,\n  React.ComponentProps<'ul'>\n>(({ className, ...props }, ref) => (\n  <ul ref={ref} className={cn('flex flex-row items-center gap-2', className)} {...props} />\n))\nPixelPaginationContent.displayName = 'PixelPaginationContent'\n\nexport const PixelPaginationItem = React.forwardRef<HTMLLIElement, React.ComponentProps<'li'>>(\n  ({ className, ...props }, ref) => <li ref={ref} className={cn('', className)} {...props} />,\n)\nPixelPaginationItem.displayName = 'PixelPaginationItem'\n\ntype PixelPaginationLinkProps = React.ComponentProps<'a'> & { isActive?: boolean }\n\nexport const PixelPaginationLink = ({ className, isActive, ...props }: PixelPaginationLinkProps) => (\n  <a\n    aria-current={isActive ? 'page' : undefined}\n    className={cn(\n      'relative inline-flex h-9 min-w-9 items-center justify-center rounded-none px-3',\n      'text-[14px] font-bitcell uppercase tracking-[2px] transition-colors',\n      PIXEL_Y,\n      'border-giga-border bg-giga-dark-card/80 text-giga-muted',\n      'hover:border-giga-cyan/50 hover:text-giga-heading',\n      isActive && 'border-giga-gold bg-giga-panel text-giga-gold',\n      className,\n    )}\n    {...props}\n  >\n    <span\n      className={cn(\n        'absolute inset-0 pointer-events-none',\n        PIXEL_X,\n        isActive ? 'border-giga-gold' : 'border-giga-border',\n      )}\n      aria-hidden\n    />\n    {props.children}\n  </a>\n)\nPixelPaginationLink.displayName = 'PixelPaginationLink'\n\nexport const PixelPaginationPrevious = ({ className, ...props }: React.ComponentProps<'a'>) => (\n  <PixelPaginationLink\n    aria-label=\"Go to previous page\"\n    className={cn('gap-1.5 pl-3', className)}\n    {...props}\n  >\n    <PixelChevronLeft className=\"h-3 w-3\" />\n    <span>PREV</span>\n  </PixelPaginationLink>\n)\nPixelPaginationPrevious.displayName = 'PixelPaginationPrevious'\n\nexport const PixelPaginationNext = ({ className, ...props }: React.ComponentProps<'a'>) => (\n  <PixelPaginationLink\n    aria-label=\"Go to next page\"\n    className={cn('gap-1.5 pr-3', className)}\n    {...props}\n  >\n    <span>NEXT</span>\n    <PixelChevronRight className=\"h-3 w-3\" />\n  </PixelPaginationLink>\n)\nPixelPaginationNext.displayName = 'PixelPaginationNext'\n\nexport const PixelPaginationEllipsis = ({ className, ...props }: React.ComponentProps<'span'>) => (\n  <span\n    aria-hidden\n    className={cn(\n      'flex h-9 w-9 items-center justify-center font-bitcell text-[14px] tracking-widest text-giga-muted',\n      className,\n    )}\n    {...props}\n  >\n    <MoreHorizontal className=\"h-4 w-4\" />\n    <span className=\"sr-only\">More pages</span>\n  </span>\n)\nPixelPaginationEllipsis.displayName = 'PixelPaginationEllipsis'\n",
+      "type": "registry:ui",
+      "target": "components/ui/pixel-pagination.tsx"
+    }
+  ]
+}

@@ -45,7 +45,7 @@ export default async function ComponentDocPage({
   ])
 
   const installNpm = `pnpm add @gigaverse/ui @gigaverse/tokens`
-  const installShadcn = `npx shadcn@latest add http://localhost:3333/r/${slug}.json`
+  const installShadcn = `npx shadcn@latest add https://aizzaku.github.io/gigaverse-webui-design-system/r/${slug}.json`
 
   return (
     <main className="mx-auto max-w-5xl px-10 py-14">

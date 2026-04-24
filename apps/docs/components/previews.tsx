@@ -121,6 +121,27 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  PixelBadge,
+  PixelBorder,
+  PixelButton,
+  PixelCard,
+  PixelCardContent,
+  PixelCardDescription,
+  PixelCardHeader,
+  PixelCardTitle,
+  PixelCheckbox,
+  PixelChevronRight,
+  PixelFactionBadge,
+  PixelPagination,
+  PixelPaginationContent,
+  PixelPaginationEllipsis,
+  PixelPaginationItem,
+  PixelPaginationLink,
+  PixelPaginationNext,
+  PixelPaginationPrevious,
+  PixelProgress,
+  PixelSlider,
+  PixelSwitch,
 } from '@gigaverse/ui'
 import { ToastDemo } from './toast-demo'
 import { CommandDemo } from './command-demo'
@@ -172,6 +193,18 @@ export type ComponentSlug =
   | 'giga-loader'
   | 'landing-modal-shell'
   | 'tweet-carousel'
+  | 'pixel-arrows'
+  | 'pixel-badge'
+  | 'pixel-border'
+  | 'pixel-button'
+  | 'pixel-card'
+  | 'pixel-carousel'
+  | 'pixel-checkbox'
+  | 'pixel-factions'
+  | 'pixel-pagination'
+  | 'pixel-progress'
+  | 'pixel-slider'
+  | 'pixel-switch'
 
 interface PreviewEntry {
   description: string
@@ -979,6 +1012,180 @@ export const PREVIEWS: Record<ComponentSlug, PreviewEntry> = {
             { label: 'PROOF OF PLAY' },
           ]}
         />
+      </div>
+    ),
+  },
+
+  // ─── PIXEL BORDER VARIANTS ─────────────────────────────────────────────────
+  'pixel-arrows': {
+    description: 'Pixel art chevron icons — pure SVG with crispEdges rendering. Staircase 2×2px pixel pattern, scales to any size.',
+    node: (
+      <div className="flex flex-wrap items-center gap-8">
+        <div className="flex items-center gap-3">
+          <PixelChevronRight className="h-6 w-6 text-giga-gold" />
+          <span className="font-bitcell text-[12px] tracking-[2px] text-giga-muted uppercase">Right</span>
+        </div>
+      </div>
+    ),
+  },
+  'pixel-badge': {
+    description: 'Pixel-bordered badge — faction and rarity variants with hard 4px block borders and no border radius.',
+    node: (
+      <div className="flex flex-wrap gap-3">
+        <PixelBadge variant="gold">LEGENDARY</PixelBadge>
+        <PixelBadge variant="cyan">AUTHENTICATED</PixelBadge>
+        <PixelBadge variant="green">ONLINE</PixelBadge>
+        <PixelBadge variant="live">LIVE</PixelBadge>
+        <PixelBadge variant="faction" faction="crusader">CRUSADER</PixelBadge>
+        <PixelBadge variant="faction" faction="archon">ARCHON</PixelBadge>
+      </div>
+    ),
+  },
+  'pixel-border': {
+    description: 'Composable pixel border wrapper — 4px (sm) or 6px (md) block borders applied to any child.',
+    node: (
+      <div className="flex flex-wrap gap-6">
+        <PixelBorder borderClass="border-giga-gold" size="md">
+          <div className="p-4 font-bitcell text-[14px] tracking-[2px] uppercase text-giga-gold">GOLD BORDER</div>
+        </PixelBorder>
+        <PixelBorder borderClass="border-giga-cyan/70" size="sm">
+          <div className="p-3 font-bitcell text-[14px] tracking-[2px] uppercase text-giga-cyan">CYAN BORDER</div>
+        </PixelBorder>
+      </div>
+    ),
+  },
+  'pixel-button': {
+    description: 'Pixel-bordered button — 4 variants with hard 4px block borders. Primary has shimmer sweep animation.',
+    node: (
+      <div className="flex flex-wrap items-center gap-4">
+        <PixelButton variant="primary">PLAY NOW</PixelButton>
+        <PixelButton variant="secondary">JOIN DISCORD</PixelButton>
+        <PixelButton variant="ghost">DECLINE</PixelButton>
+        <PixelButton variant="destructive">LEAVE FACTION</PixelButton>
+        <PixelButton variant="primary" size="lg">ENTER DUNGEON</PixelButton>
+      </div>
+    ),
+  },
+  'pixel-card': {
+    description: 'Pixel-bordered card — 4 variants (standard, gold, recessed, stat) with 6px block borders.',
+    node: (
+      <div className="grid gap-4 md:grid-cols-2">
+        <PixelCard variant="standard">
+          <PixelCardHeader>
+            <PixelCardTitle>TOTAL PLAYERS</PixelCardTitle>
+            <PixelCardDescription>Daily active</PixelCardDescription>
+          </PixelCardHeader>
+          <PixelCardContent>
+            <p className="text-[42px] leading-none text-giga-gold">80,241</p>
+          </PixelCardContent>
+        </PixelCard>
+        <PixelCard variant="gold">
+          <PixelCardHeader>
+            <PixelCardTitle>RELIC TIER</PixelCardTitle>
+            <PixelCardDescription>Top 0.1% of players</PixelCardDescription>
+          </PixelCardHeader>
+          <PixelCardContent>
+            <p className="font-m5x7 text-[17px] text-giga-heading">The ultimate achievement.</p>
+          </PixelCardContent>
+        </PixelCard>
+      </div>
+    ),
+  },
+  'pixel-carousel': {
+    description: 'Pixel-styled Embla carousel with block-border staircase arrows — horizontal and vertical support.',
+    node: (
+      <div className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-muted p-4 border border-giga-border rounded-giga text-center">
+        Carousel demo — see <span className="text-giga-cyan">/all</span> for live preview
+      </div>
+    ),
+  },
+  'pixel-checkbox': {
+    description: 'Pixel-bordered checkbox — Radix primitive with 4px block border and crisp square checkmark.',
+    node: (
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <PixelCheckbox id="px-chk1" defaultChecked />
+          <label htmlFor="px-chk1" className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-heading cursor-pointer">ACCEPT TERMS</label>
+        </div>
+        <div className="flex items-center gap-3">
+          <PixelCheckbox id="px-chk2" />
+          <label htmlFor="px-chk2" className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-muted cursor-pointer">RECEIVE UPDATES</label>
+        </div>
+      </div>
+    ),
+  },
+  'pixel-factions': {
+    description: 'Faction pixel buttons — all 8 factions with hard-stop shiny gradient and 4px block borders.',
+    node: (
+      <div className="flex flex-wrap gap-3">
+        <PixelFactionBadge faction="crusader" />
+        <PixelFactionBadge faction="overseer" />
+        <PixelFactionBadge faction="athena" selected />
+        <PixelFactionBadge faction="archon" />
+        <PixelFactionBadge faction="foxglove" />
+        <PixelFactionBadge faction="chobo" />
+        <PixelFactionBadge faction="summoner" />
+        <PixelFactionBadge faction="gigus" />
+      </div>
+    ),
+  },
+  'pixel-pagination': {
+    description: 'Pixel-bordered pagination — block-border prev/next with staircase pixel chevrons.',
+    node: (
+      <PixelPagination>
+        <PixelPaginationContent>
+          <PixelPaginationItem>
+            <PixelPaginationPrevious href="#" />
+          </PixelPaginationItem>
+          <PixelPaginationItem>
+            <PixelPaginationLink href="#" isActive>1</PixelPaginationLink>
+          </PixelPaginationItem>
+          <PixelPaginationItem>
+            <PixelPaginationLink href="#">2</PixelPaginationLink>
+          </PixelPaginationItem>
+          <PixelPaginationItem>
+            <PixelPaginationLink href="#">3</PixelPaginationLink>
+          </PixelPaginationItem>
+          <PixelPaginationItem>
+            <PixelPaginationEllipsis />
+          </PixelPaginationItem>
+          <PixelPaginationItem>
+            <PixelPaginationNext href="#" />
+          </PixelPaginationItem>
+        </PixelPaginationContent>
+      </PixelPagination>
+    ),
+  },
+  'pixel-progress': {
+    description: 'Pixel-bordered progress bar — animated fill with 4px block borders and cyan glow.',
+    node: (
+      <div className="flex flex-col gap-6 max-w-md">
+        <PixelProgress value={65} />
+        <PixelProgress value={30} animated={false} />
+        <PixelProgress value={90} />
+      </div>
+    ),
+  },
+  'pixel-slider': {
+    description: 'Pixel-bordered slider — Radix primitive with block-border track and square thumb.',
+    node: (
+      <div className="max-w-md">
+        <PixelSlider defaultValue={[40]} max={100} step={1} />
+      </div>
+    ),
+  },
+  'pixel-switch': {
+    description: 'Pixel-bordered switch — Radix primitive with 4px block border and square sliding indicator.',
+    node: (
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-4">
+          <PixelSwitch id="px-sw1" defaultChecked />
+          <label htmlFor="px-sw1" className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-heading cursor-pointer">NOTIFICATIONS</label>
+        </div>
+        <div className="flex items-center gap-4">
+          <PixelSwitch id="px-sw2" />
+          <label htmlFor="px-sw2" className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-muted cursor-pointer">AUTO-SAVE</label>
+        </div>
       </div>
     ),
   },

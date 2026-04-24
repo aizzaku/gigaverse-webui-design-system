@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-border",
+  "type": "registry:ui",
+  "description": "Pixel border wrapper — composable 4–6px block border for any child element.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/pixel-border.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { cn } from '../lib/cn'\n\nexport interface PixelBorderProps extends React.HTMLAttributes<HTMLDivElement> {\n  /** Tailwind border-color class applied to both axes. Defaults to teal. */\n  borderClass?: string\n  /** 6px notch (default) for cards/sections; 4px for compact components. */\n  size?: 'sm' | 'md'\n}\n\nexport const PixelBorder = React.forwardRef<HTMLDivElement, PixelBorderProps>(\n  (\n    { className, borderClass = 'border-giga-teal/60', size = 'md', children, ...props },\n    ref,\n  ) => {\n    const yBorder = size === 'sm' ? 'border-y-[4px]' : 'border-y-[6px]'\n    const xBorder = size === 'sm' ? '-mx-[4px] border-x-[4px]' : '-mx-[6px] border-x-[6px]'\n\n    return (\n      <div\n        ref={ref}\n        className={cn('relative rounded-none', yBorder, borderClass, className)}\n        {...props}\n      >\n        <div\n          className={cn('absolute inset-0 pointer-events-none', xBorder, borderClass)}\n          aria-hidden\n        />\n        {children}\n      </div>\n    )\n  },\n)\nPixelBorder.displayName = 'PixelBorder'\n",
+      "type": "registry:ui",
+      "target": "components/ui/pixel-border.tsx"
+    }
+  ]
+}

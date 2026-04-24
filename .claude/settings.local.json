@@ -87,7 +87,12 @@
       "Bash(curl -sf http://localhost:3333/r/giga-loader.json -o /tmp/giga-loader.json)",
       "Bash(timeout 120 npx shadcn@latest add http://localhost:3333/r/giga-loader.json --yes)",
       "Bash(pnpm dev *)",
-      "Bash(curl -sf -w \"\\\\nHTTP %{http_code}\\\\n\" http://localhost:3001/ -o /tmp/gigaskin.html)"
+      "Bash(curl -sf -w \"\\\\nHTTP %{http_code}\\\\n\" http://localhost:3001/ -o /tmp/gigaskin.html)",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:gigaverse.io)",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "Bash(git remote *)",
+      "Bash(git add *)"
     ]
   }
 }

@@ -51,6 +51,21 @@ const p2Components = [
 
 const nativeComponents = ['giga-primitives', 'giga-loader', 'landing-modal-shell']
 
+const pixelComponents = [
+  'pixel-button',
+  'pixel-card',
+  'pixel-badge',
+  'pixel-border',
+  'pixel-arrows',
+  'pixel-checkbox',
+  'pixel-switch',
+  'pixel-slider',
+  'pixel-progress',
+  'pixel-pagination',
+  'pixel-factions',
+  'pixel-carousel',
+]
+
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-5xl px-10 py-16">
@@ -140,11 +155,30 @@ export default function HomePage() {
       </ul>
 
       <h2 className="mb-6 mt-14 border-b border-giga-border pb-2 text-[24px] tracking-wider text-giga-gold">
+        PIXEL BORDERS
+      </h2>
+      <p className="mb-6 max-w-xl text-[15px] leading-[1.4] text-giga-muted">
+        8-bit variants — hard 4–6px block borders, no border radius, staircase chevrons. Drop-in alongside standard components.
+      </p>
+      <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {pixelComponents.map((c) => (
+          <li key={c}>
+            <Link
+              href={`/docs/${c}`}
+              className="block rounded-none border-y-[3px] border-x-[3px] -mx-[3px] border-giga-gold/50 bg-giga-gold/5 px-4 py-3 text-[16px] tracking-wide uppercase text-giga-gold transition-colors hover:border-giga-gold/90 hover:bg-giga-gold/10"
+            >
+              {c}
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <h2 className="mb-6 mt-14 border-b border-giga-border pb-2 text-[24px] tracking-wider text-giga-gold">
         INSTALL
       </h2>
       <pre className="rounded-giga border border-giga-border bg-giga-panel/60 p-4 text-[14px] text-giga-cyan overflow-x-auto">
         <code>{`# shadcn registry
-npx shadcn@latest add http://localhost:3333/r/button.json
+npx shadcn@latest add https://aizzaku.github.io/gigaverse-webui-design-system/r/button.json
 
 # npm
 pnpm add @gigaverse/ui @gigaverse/tokens`}</code>

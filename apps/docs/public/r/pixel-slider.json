@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-slider",
+  "type": "registry:ui",
+  "description": "Pixel-bordered slider — Radix primitive with block-border track and square thumb.",
+  "dependencies": [
+    "@radix-ui/react-slider",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/pixel-slider.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as SliderPrimitive from '@radix-ui/react-slider'\nimport { cn } from '../lib/cn'\n\nconst TRACK_Y = 'border-y-[4px]'\nconst TRACK_X = '-mx-[4px] border-x-[4px]'\n\nexport const PixelSlider = React.forwardRef<\n  React.ElementRef<typeof SliderPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>\n>(({ className, ...props }, ref) => (\n  <SliderPrimitive.Root\n    ref={ref}\n    className={cn('relative flex w-full touch-none select-none items-center', className)}\n    {...props}\n  >\n    <SliderPrimitive.Track\n      className={cn(\n        'relative h-4 w-full grow rounded-none bg-giga-panel',\n        TRACK_Y,\n        'border-giga-border',\n      )}\n    >\n      <span\n        className={cn('absolute inset-0 pointer-events-none', TRACK_X, 'border-giga-border')}\n        aria-hidden\n      />\n      <SliderPrimitive.Range className=\"absolute h-full bg-giga-gold-grad\" />\n    </SliderPrimitive.Track>\n\n    <SliderPrimitive.Thumb\n      className={cn(\n        'relative block h-5 w-5 rounded-none',\n        'border-y-[4px] border-giga-gold bg-giga-gold-grad shadow-giga-bevel',\n        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',\n        'disabled:pointer-events-none disabled:opacity-50',\n      )}\n    >\n      <span\n        className={cn('absolute inset-0 pointer-events-none', TRACK_X, 'border-giga-gold')}\n        aria-hidden\n      />\n    </SliderPrimitive.Thumb>\n  </SliderPrimitive.Root>\n))\nPixelSlider.displayName = SliderPrimitive.Root.displayName\n",
+      "type": "registry:ui",
+      "target": "components/ui/pixel-slider.tsx"
+    }
+  ]
+}

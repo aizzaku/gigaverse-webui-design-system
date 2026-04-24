@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pixel-switch",
+  "type": "registry:ui",
+  "description": "Pixel-bordered switch — Radix primitive with 4px block border and square indicator.",
+  "dependencies": [
+    "@radix-ui/react-switch",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/pixel-switch.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as SwitchPrimitives from '@radix-ui/react-switch'\nimport { cn } from '../lib/cn'\n\nconst TRACK_Y = 'border-y-[4px]'\nconst TRACK_X = '-mx-[4px] border-x-[4px]'\n\nexport const PixelSwitch = React.forwardRef<\n  React.ElementRef<typeof SwitchPrimitives.Root>,\n  React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>\n>(({ className, ...props }, ref) => (\n  <SwitchPrimitives.Root\n    ref={ref}\n    className={cn(\n      'group peer relative inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-none',\n      TRACK_Y,\n      'border-giga-teal/50 bg-giga-panel/70 transition-colors',\n      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',\n      'disabled:cursor-not-allowed disabled:opacity-50',\n      'data-[state=checked]:border-giga-gold data-[state=checked]:bg-giga-gold-grad',\n      className,\n    )}\n    {...props}\n  >\n    <span\n      className={cn(\n        'absolute inset-0 pointer-events-none',\n        TRACK_X,\n        'border-giga-teal/50',\n        'group-data-[state=checked]:border-giga-gold',\n      )}\n      aria-hidden\n    />\n    <SwitchPrimitives.Thumb\n      className={cn(\n        'relative pointer-events-none block h-4 w-4 rounded-none bg-giga-heading shadow-lg',\n        'transition-transform duration-150',\n        'data-[state=checked]:translate-x-[22px] data-[state=unchecked]:translate-x-0.5',\n        'data-[state=checked]:bg-giga-button-text',\n      )}\n    />\n  </SwitchPrimitives.Root>\n))\nPixelSwitch.displayName = SwitchPrimitives.Root.displayName\n",
+      "type": "registry:ui",
+      "target": "components/ui/pixel-switch.tsx"
+    }
+  ]
+}
