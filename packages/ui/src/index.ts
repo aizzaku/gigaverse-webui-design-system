@@ -52,3 +52,11 @@ export * from './components/tweet-carousel'
 export * from './components/giga-primitives'
 export * from './components/giga-loader'
 export * from './components/landing-modal-shell'
+
+// Pixel art border variants
+export * from './components/pixel-border'
+export * from './components/pixel-card'
+export * from './components/pixel-button'
+export * from './components/pixel-badge'
+export * from './components/pixel-checkbox'
+export * from './components/pixel-progress'
