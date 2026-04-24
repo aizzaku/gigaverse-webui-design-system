@@ -32,8 +32,16 @@ export function factionShinyGradient(name: FactionName): string {
   return `linear-gradient(180deg, ${light} 0%, ${light} 48%, ${primary} 52%, ${bottom} 100%)`
 }
 
+/** Hard-stop version — top/bottom halves snap at exactly 50% (pixel art style). */
+export function factionShinyPixelGradient(name: FactionName): string {
+  const { primary, light } = factions[name]
+  const bottom = shade(primary, -0.22)
+  return `linear-gradient(180deg, ${light} 0%, ${light} 50%, ${primary} 50%, ${bottom} 100%)`
+}
+
 export const gradients = {
   gold: 'linear-gradient(180deg, #ffe070 0%, #f0c040 48%, #d8a020 52%, #c08010 100%)',
+  goldPixel: 'linear-gradient(180deg, #ffe070 0%, #f0c040 50%, #d8a020 50%, #c08010 100%)',
   goldAccept: 'linear-gradient(180deg, #F5D06B 0%, #E89B0C 100%)',
   progress: 'linear-gradient(90deg, #F5C563, #0483AB)',
   sectionDivider:

@@ -76,6 +76,7 @@ export const gigaversePreset = {
       },
       backgroundImage: {
         'giga-gold-grad': gradients.gold,
+        'giga-gold-pixel-grad': gradients.goldPixel,
         'giga-gold-accept-grad': gradients.goldAccept,
         'giga-progress-grad': gradients.progress,
         'giga-divider': gradients.sectionDivider,
