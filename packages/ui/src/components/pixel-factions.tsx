@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { cn } from '../lib/cn'
-import { factions, factionShinyPixelGradient, shade, type FactionName } from '@gigaverse/tokens'
+import { factions, factionShinyGradient, shade, type FactionName } from '@gigaverse/tokens'
 
 const PIXEL_Y = 'border-y-[4px]'
 const PIXEL_X = '-mx-[4px] border-x-[4px]'
@@ -41,7 +41,7 @@ export const PixelFactionBadge = React.forwardRef<HTMLButtonElement, PixelFactio
           className,
         )}
         style={{
-          background: factionShinyPixelGradient(faction),
+          background: factionShinyGradient(faction),
           borderColor: primary,
           color: text,
           ...(selected ? { boxShadow: `0 0 20px ${primary}66` } : null),
@@ -94,7 +94,7 @@ export const PixelFactionJoinButton = React.forwardRef<
         className,
       )}
       style={{
-        background: factionShinyPixelGradient(faction),
+        background: factionShinyGradient(faction),
         borderColor: primary,
         color: textColor,
         ...style,
