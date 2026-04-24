@@ -27,7 +27,7 @@ export const PixelSlider = React.forwardRef<
         className={cn('absolute inset-0 pointer-events-none', TRACK_X, 'border-giga-border')}
         aria-hidden
       />
-      <SliderPrimitive.Range className="absolute h-full bg-giga-progress-grad" />
+      <SliderPrimitive.Range className="absolute h-full bg-giga-gold-grad" />
     </SliderPrimitive.Track>
 
     <SliderPrimitive.Thumb

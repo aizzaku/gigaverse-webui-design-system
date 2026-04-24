@@ -195,12 +195,12 @@ export default function PixelArtPage() {
           </>
         }
         pixel={
-          <>
+          <div className="flex flex-wrap gap-4">
             <PixelButton variant="primary">Primary</PixelButton>
             <PixelButton variant="secondary">Secondary</PixelButton>
             <PixelButton variant="ghost">Ghost</PixelButton>
             <PixelButton variant="destructive">Delete</PixelButton>
-          </>
+          </div>
         }
       />
 
@@ -373,10 +373,10 @@ export default function PixelArtPage() {
           <div className="flex flex-col gap-2">
             <SectionTag>Icons</SectionTag>
             <div className="flex items-center gap-4 p-3 rounded bg-giga-panel/30">
-              <PixelChevronLeft className="h-4 w-4 text-giga-muted" />
-              <PixelChevronRight className="h-4 w-4 text-giga-muted" />
-              <PixelChevronUp className="h-4 w-4 text-giga-muted" />
-              <PixelChevronDown className="h-4 w-4 text-giga-muted" />
+              <PixelChevronLeft className="h-4 w-4 text-giga-gold" />
+              <PixelChevronRight className="h-4 w-4 text-giga-gold" />
+              <PixelChevronUp className="h-4 w-4 text-giga-gold" />
+              <PixelChevronDown className="h-4 w-4 text-giga-gold" />
             </div>
           </div>
           <div className="flex flex-col gap-2">

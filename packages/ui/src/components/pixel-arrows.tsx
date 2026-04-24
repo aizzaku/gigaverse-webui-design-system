@@ -108,8 +108,8 @@ export const PixelArrowButton = React.forwardRef<HTMLButtonElement, PixelArrowBu
         ref={ref}
         className={cn(
           'relative inline-flex h-10 w-10 items-center justify-center rounded-none',
-          'border-giga-border bg-giga-dark-card/80 text-giga-muted',
-          'transition-colors hover:border-giga-cyan/50 hover:text-giga-heading',
+          'border-giga-border bg-giga-dark-card/80 text-giga-gold',
+          'transition-colors hover:border-giga-gold/70 hover:text-giga-gold hover:brightness-110',
           'disabled:opacity-40 disabled:pointer-events-none',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',
           PIXEL_Y,
