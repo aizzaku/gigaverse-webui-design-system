@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs & Indicators — GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes pingpong {
+      0%, 100% { transform: translateX(0); }
+      33% { transform: translateX(18px); }
+      50% { transform: translateX(36px); }
+      66% { transform: translateX(54px); }
+      83% { transform: translateX(54px); }
+      90% { transform: translateX(36px); }
+      95% { transform: translateX(18px); }
+    }
+
+    @keyframes progressGlow {
+      0%, 100% { box-shadow: 0 0 8px rgba(245,197,99,0.3); }
+      50% { box-shadow: 0 0 16px rgba(245,197,99,0.6); }
+    }
+  </style>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell flex flex-col">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-muted hover:text-giga-gold transition-colors">COVER</a>
+    <a href="colors.html" class="text-giga-muted hover:text-giga-gold transition-colors">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-muted hover:text-giga-gold transition-colors">BUTTONS</a>
+    <a href="cards.html" class="text-giga-muted hover:text-giga-gold transition-colors">CARDS</a>
+    <a href="inputs.html" class="text-giga-gold">INPUTS</a>
+    <a href="layout.html" class="text-giga-muted hover:text-giga-gold transition-colors">LAYOUT</a>
+  </nav>
+
+  <main class="flex-1 px-16 py-10">
+
+    <p class="text-giga-teal text-[12px] uppercase tracking-[3px] mb-2">05 — COMPONENTS</p>
+    <h1 class="text-[36px] text-white tracking-[0.04em] leading-none mb-10">INPUTS & INDICATORS</h1>
+
+    <div class="grid grid-cols-2 gap-16">
+
+      <!-- LEFT COLUMN: Username Input States -->
+      <div class="space-y-10">
+
+        <!-- Default State -->
+        <div>
+          <p class="text-giga-muted text-[12px] tracking-wide mb-3">Default state</p>
+          <div class="max-w-[360px]">
+            <input
+              type="text"
+              placeholder="Enter username..."
+              class="w-full rounded-lg bg-transparent px-4 py-2.5 text-center text-giga-muted/40 text-[18px] tracking-[1.5px] font-bitcell outline-none"
+              style="border: 2px solid rgba(4,131,171,0.3);"
+              readonly
+            />
+          </div>
+        </div>
+
+        <!-- Available State -->
+        <div>
+          <p class="text-giga-muted text-[12px] tracking-wide mb-3">Available</p>
+          <div class="max-w-[360px]">
+            <input
+              type="text"
+              value="GigaWarrior"
+              class="w-full rounded-lg bg-transparent px-4 py-2.5 text-center text-giga-heading text-[18px] tracking-[1.5px] font-bitcell outline-none"
+              style="border: 2px solid rgba(61,217,78,0.5);"
+              readonly
+            />
+            <p class="text-giga-green-light text-[13px] mt-2 text-center">Username is available!</p>
+          </div>
+        </div>
+
+        <!-- Taken / Error State -->
+        <div>
+          <p class="text-giga-muted text-[12px] tracking-wide mb-3">Taken / Error</p>
+          <div class="max-w-[360px]">
+            <input
+              type="text"
+              value="CoolPlayer99"
+              class="w-full rounded-lg bg-transparent px-4 py-2.5 text-center text-giga-heading text-[18px] tracking-[1.5px] font-bitcell border-2 border-red-400 outline-none"
+              readonly
+            />
+            <p class="text-red-400 text-[13px] mt-2 text-center">Username is taken</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Indicators -->
+      <div class="space-y-10">
+
+        <!-- Status Pips -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">STATUS PIPS</p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-[7px] h-[7px] rounded-full bg-giga-gold" style="box-shadow: 0 0 10px rgba(245,197,99,0.5);"></div>
+              <span class="text-giga-muted text-[14px]">Gold — Wallet connected</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-[7px] h-[7px] rounded-full bg-giga-cyan" style="box-shadow: 0 0 10px rgba(2,199,215,0.45);"></div>
+              <span class="text-giga-muted text-[14px]">Cyan — Signing</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-[7px] h-[7px] rounded-full bg-giga-green" style="box-shadow: 0 0 10px rgba(61,217,78,0.45);"></div>
+              <span class="text-giga-muted text-[14px]">Green — Authenticated</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-[7px] h-[7px] rounded-full bg-giga-muted/60"></div>
+              <span class="text-giga-muted text-[14px]">Muted — Default / disconnected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ping Pong Loader -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">PING PONG LOADER</p>
+          <div class="flex items-center gap-4">
+            <div class="relative flex gap-[6px]">
+              <div class="w-3 h-3 rounded-[2px] bg-giga-dark-card border border-giga-border-dark"></div>
+              <div class="w-3 h-3 rounded-[2px] bg-giga-dark-card border border-giga-border-dark"></div>
+              <div class="w-3 h-3 rounded-[2px] bg-giga-dark-card border border-giga-border-dark"></div>
+              <div class="w-3 h-3 rounded-[2px] bg-giga-dark-card border border-giga-border-dark"></div>
+              <div
+                class="absolute top-0 left-0 w-3 h-3 rounded-[2px] bg-giga-gold"
+                style="animation: pingpong 1.2s ease-in-out infinite;"
+              ></div>
+            </div>
+            <span class="text-giga-muted text-[12px] uppercase tracking-[2px]">LOADING</span>
+          </div>
+        </div>
+
+        <!-- Step Progress Bar -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">STEP PROGRESS BAR</p>
+          <div class="w-full h-[8px] rounded-full" style="background: #0c1620; border: 1px solid rgba(4,131,171,0.2);">
+            <div
+              class="h-full rounded-full"
+              style="width: 60%; background: linear-gradient(90deg, #F5C563, #0483AB); animation: progressGlow 2s ease-in-out infinite;"
+            ></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div class="w-full h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(4,131,171,0.4) 50%, transparent 100%);"></div>
+
+</body>
+</html>

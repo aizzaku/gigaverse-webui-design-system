@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toast",
+  "type": "registry:ui",
+  "description": "Sonner-backed toaster themed for Gigaverse.",
+  "dependencies": [
+    "sonner",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toast.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Toaster as SonnerToaster, toast } from 'sonner'\nimport { cn } from '../lib/cn'\n\nexport interface ToasterProps extends React.ComponentPropsWithoutRef<typeof SonnerToaster> {}\n\nexport const Toaster: React.FC<ToasterProps> = ({ className, toastOptions, ...props }) => (\n  <SonnerToaster\n    theme=\"dark\"\n    position=\"bottom-right\"\n    className={cn('font-bitcell', className)}\n    toastOptions={{\n      classNames: {\n        toast:\n          'group toast font-bitcell rounded-giga border border-giga-border bg-giga-card text-giga-heading shadow-[0_0_24px_rgba(0,0,0,0.6)]',\n        description: 'text-giga-muted',\n        actionButton:\n          'bg-giga-gold-grad text-giga-button-text font-bold tracking-[2px] rounded-giga-md',\n        cancelButton: 'bg-giga-panel text-giga-muted border border-giga-border',\n        error: 'border-giga-live text-giga-live-text',\n        success: 'border-giga-green/60 text-giga-green-light',\n      },\n      ...toastOptions,\n    }}\n    {...props}\n  />\n)\n\nexport { toast }",
+      "type": "registry:ui",
+      "target": "components/ui/toast.tsx"
+    }
+  ]
+}

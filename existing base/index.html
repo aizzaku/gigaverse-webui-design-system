@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-overlay': '#02060c',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-live-bg': '#5a1111',
+            'giga-live-text': '#ffb2b2',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell flex flex-col">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-gold">COVER</a>
+    <a href="colors.html" class="text-giga-muted hover:text-giga-gold transition-colors">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-muted hover:text-giga-gold transition-colors">BUTTONS</a>
+    <a href="cards.html" class="text-giga-muted hover:text-giga-gold transition-colors">CARDS</a>
+    <a href="inputs.html" class="text-giga-muted hover:text-giga-gold transition-colors">INPUTS</a>
+    <a href="layout.html" class="text-giga-muted hover:text-giga-gold transition-colors">LAYOUT</a>
+  </nav>
+
+  <main class="flex-1 flex flex-col justify-center px-16">
+    <div>
+      <div class="w-10 h-0.5 bg-giga-gold mb-6"></div>
+      <h1 class="text-[52px] text-giga-heading tracking-[0.05em] leading-none mb-3">GIGAVERSE</h1>
+      <p class="text-giga-gold text-[16px] tracking-[4px] uppercase mb-4">DESIGN SYSTEM</p>
+      <p class="text-giga-muted text-[14px] tracking-wide">Color tokens &middot; Typography &middot; Components &middot; Animation &middot; Layout patterns</p>
+    </div>
+  </main>
+
+  <div class="w-full h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(4,131,171,0.4) 50%, transparent 100%);"></div>
+
+</body>
+</html>

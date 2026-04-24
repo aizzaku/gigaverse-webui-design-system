@@ -1,0 +1,175 @@
+1:"$Sreact.fragment"
+2:I[6166,["177","static/chunks/app/layout-8493e5638b29fe78.js"],"AxeDev"]
+3:I[7491,[],""]
+4:I[6431,[],""]
+6:I[10,[],"OutletBoundary"]
+8:I[5791,[],"AsyncMetadataOutlet"]
+a:I[10,[],"ViewportBoundary"]
+c:I[10,[],"MetadataBoundary"]
+d:"$Sreact.suspense"
+f:I[457,[],""]
+:HL["/_next/static/css/d350892a1aae4366.css","style"]
+0:{"P":null,"b":"vEqYcw95b2gYq8WEs8j96","p":"","c":["","docs","alert-dialog",""],"i":false,"f":[[["",{"children":["docs",{"children":[["slug","alert-dialog","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d350892a1aae4366.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":""}],["$","link",null,{"rel":"stylesheet","href":"https://fonts.googleapis.com/css2?family=VT323&display=swap"}]]}],["$","body",null,{"className":"min-h-screen bg-giga-navy text-giga-heading antialiased","children":[["$","$L2",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]]}]]}]]}],{"children":["docs",["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","alert-dialog","d"],["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$L7",["$","$L8",null,{"promise":"$@9"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$La",null,{"children":"$Lb"}],null],["$","$Lc",null,{"children":["$","div",null,{"hidden":true,"children":["$","$d",null,{"fallback":null,"children":"$Le"}]}]}]]}],false]],"m":"$undefined","G":["$f",[]],"s":false,"S":true}
+b:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+7:null
+9:{"metadata":[["$","title","0",{"children":"Gigaverse UI"}],["$","meta","1",{"name":"description","content":"shadcn-style component library in the Gigaverse visual language."}]],"error":null,"digest":"$undefined"}
+e:"$9:metadata"
+10:I[4986,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],""]
+11:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"Tabs"]
+12:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"TabsList"]
+13:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"TabsTrigger"]
+14:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"TabsContent"]
+15:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialog"]
+16:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogTrigger"]
+17:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"Button"]
+18:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogContent"]
+19:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogHeader"]
+1a:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogTitle"]
+1b:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogDescription"]
+1c:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogFooter"]
+1d:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogCancel"]
+1e:I[5121,["986","static/chunks/986-7d7647d16d824ffd.js","405","static/chunks/405-39c1081c756aeead.js","121","static/chunks/121-94bc2b3af25a32d8.js","508","static/chunks/app/docs/%5Bslug%5D/page-ffa2557164b5e4bd.js"],"AlertDialogAction"]
+1f:T42a,rounded-giga-xl border border-giga-border bg-giga-dark-card/60 p-10 font-m5x7 text-[17px] leading-[1.5] text-giga-heading [&>*]:mb-4 [&_h1]:mt-6 [&_h1]:mb-3 [&_h1]:font-bitcell [&_h1]:text-[24px] [&_h1]:uppercase [&_h1]:tracking-[2px] [&_h1]:text-giga-gold [&_h2]:mt-6 [&_h2]:mb-3 [&_h2]:font-bitcell [&_h2]:text-[18px] [&_h2]:uppercase [&_h2]:tracking-[2px] [&_h2]:text-giga-gold [&_h3]:mt-5 [&_h3]:font-bitcell [&_h3]:uppercase [&_h3]:tracking-[2px] [&_h3]:text-giga-heading [&_code]:font-bitcell [&_code]:text-giga-cyan [&_pre]:rounded-giga [&_pre]:border [&_pre]:border-giga-border [&_pre]:bg-giga-panel/60 [&_pre]:p-4 [&_pre]:overflow-x-auto [&_pre]:text-[14px] [&_pre_code]:text-giga-heading [&_table]:w-full [&_th]:border-b [&_th]:border-giga-border [&_th]:pb-2 [&_th]:text-left [&_th]:font-bitcell [&_th]:uppercase [&_th]:tracking-[1.5px] [&_th]:text-giga-gold [&_td]:border-b [&_td]:border-giga-border/40 [&_td]:py-2 [&_td]:pr-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_a]:text-giga-cyan [&_a]:underline-offset-4 hover:[&_a]:underline5:["$","main",null,{"className":"mx-auto max-w-5xl px-10 py-14","children":[["$","$L10",null,{"href":"/","className":"text-[14px] tracking-[2px] text-giga-muted hover:text-giga-cyan","children":"← BACK"}],["$","p",null,{"className":"mt-4 text-[13px] uppercase tracking-[3px] text-giga-teal","children":"COMPONENT"}],["$","h1",null,{"className":"mb-2 text-[48px] leading-none text-white uppercase","children":"alert-dialog"}],["$","p",null,{"className":"mb-8 max-w-2xl text-[16px] leading-[1.3] text-giga-muted","children":"Destructive confirmation dialog — live-red border and glow."}],["$","$L11",null,{"defaultValue":"preview","children":[["$","$L12",null,{"children":[["$","$L13",null,{"value":"preview","children":"PREVIEW"}],["$","$L13",null,{"value":"usage","children":"USAGE"}],["$","$L13",null,{"value":"install","children":"INSTALL"}],["$","$L13",null,{"value":"source","children":"SOURCE"}]]}],["$","$L14",null,{"value":"preview","children":["$","div",null,{"className":"rounded-giga-xl border border-giga-border bg-giga-dark-card/60 p-10","children":["$","$L15",null,{"children":[["$","$L16",null,{"asChild":true,"children":["$","$L17",null,{"variant":"destructive","children":"LEAVE FACTION"}]}],["$","$L18",null,{"children":[["$","$L19",null,{"children":[["$","$L1a",null,{"children":"ARE YOU SURE?"}],["$","$L1b",null,{"children":"Leaving forfeits all faction-bound items. This cannot be undone."}]]}],["$","$L1c",null,{"children":[["$","$L1d",null,{"children":"KEEP"}],["$","$L1e",null,{"children":"LEAVE"}]]}]]}]]}]}]}],["$","$L14",null,{"value":"usage","children":["$","div",null,{"className":"$1f","children":["$","p",null,{"className":"text-giga-muted","children":["No usage notes yet. Add one at"," ",["$","code",null,{"className":"text-giga-cyan","children":["apps/docs/content/components/","alert-dialog",".md"]}],"."]}]}]}],["$","$L14",null,{"value":"install","children":["$","div",null,{"className":"rounded-giga-xl border border-giga-border bg-giga-dark-card/60 p-10 space-y-6","children":[["$","div",null,{"children":[["$","h3",null,{"className":"mb-3 font-bitcell text-[14px] uppercase tracking-[2px] text-giga-teal","children":"NPM — locked version"}],["$","pre",null,{"className":"rounded-giga border border-giga-border bg-giga-panel/60 p-4 text-[14px] text-giga-cyan overflow-x-auto","children":["$","code",null,{"children":"pnpm add @gigaverse/ui @gigaverse/tokens"}]}],["$","p",null,{"className":"mt-2 font-m5x7 text-[14px] text-giga-muted","children":["Then ",["$","code",null,{"className":"text-giga-cyan","children":["import ","{ ","AlertDialog"," } from '@gigaverse/ui'"]}],"."]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"mb-3 font-bitcell text-[14px] uppercase tracking-[2px] text-giga-teal","children":"shadcn registry — ownable copy"}],["$","pre",null,{"className":"rounded-giga border border-giga-border bg-giga-panel/60 p-4 text-[14px] text-giga-cyan overflow-x-auto","children":["$","code",null,{"children":"npx shadcn@latest add http://localhost:3333/r/alert-dialog.json"}]}],"$L20"]}],"$L21"]}]}],"$L22"]}]]}]
+20:["$","p",null,{"className":"mt-2 font-m5x7 text-[14px] text-giga-muted","children":["Writes ",["$","code",null,{"className":"text-giga-cyan","children":["components/ui/","alert-dialog",".tsx"]}]," directly into your project so you own and can modify it."]}]
+23:T13b1,{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-alert-dialog",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/alert-dialog.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'\nimport { cn } from '../lib/cn'\n\nexport const AlertDialog = AlertDialogPrimitive.Root\nexport const AlertDialogTrigger = AlertDialogPrimitive.Trigger\nexport const AlertDialogPortal = AlertDialogPrimitive.Portal\n\nexport const AlertDialogOverlay = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPrimitive.Overlay\n    ref={ref}\n    className={cn(\n      'fixed inset-0 z-50 bg-giga-overlay/80 backdrop-blur-sm',\n      'data-[state=open]:animate-in data-[state=closed]:animate-out',\n      'data-[state=open]:fade-in data-[state=closed]:fade-out',\n      className,\n    )}\n    {...props}\n  />\n))\nAlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName\n\nexport const AlertDialogContent = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPortal>\n    <AlertDialogOverlay />\n    <AlertDialogPrimitive.Content\n      ref={ref}\n      className={cn(\n        'fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2',\n        'rounded-giga-xl border border-giga-live/40 bg-giga-card p-6',\n        'shadow-[0_0_40px_rgba(255,74,81,0.14)]',\n        'font-bitcell text-giga-heading',\n        'focus-visible:outline-none',\n        'data-[state=open]:animate-in data-[state=closed]:animate-out',\n        'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',\n        'data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95',\n        className,\n      )}\n      {...props}\n    />\n  </AlertDialogPortal>\n))\nAlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName\n\nexport const AlertDialogHeader = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('flex flex-col gap-1', className)} {...props} />\n)\nAlertDialogHeader.displayName = 'AlertDialogHeader'\n\nexport const AlertDialogFooter = ({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('mt-6 flex justify-end gap-2', className)} {...props} />\n)\nAlertDialogFooter.displayName = 'AlertDialogFooter'\n\nexport const AlertDialogTitle = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Title>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPrimitive.Title\n    ref={ref}\n    className={cn('text-[24px] tracking-wide text-giga-live uppercase', className)}\n    {...props}\n  />\n))\nAlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName\n\nexport const AlertDialogDescription = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Description>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPrimitive.Description\n    ref={ref}\n    className={cn('text-[14px] text-giga-muted', className)}\n    {...props}\n  />\n))\nAlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName\n\nexport const AlertDialogAction = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Action>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPrimitive.Action\n    ref={ref}\n    className={cn(\n      'inline-flex h-10 items-center justify-center rounded-giga px-4 text-[14px] font-bitcell uppercase tracking-[2px]',\n      'bg-giga-live text-white hover:bg-giga-live/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-live',\n      className,\n    )}\n    {...props}\n  />\n))\nAlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName\n\nexport const AlertDialogCancel = React.forwardRef<\n  React.ElementRef<typeof AlertDialogPrimitive.Cancel>,\n  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>\n>(({ className, ...props }, ref) => (\n  <AlertDialogPrimitive.Cancel\n    ref={ref}\n    className={cn(\n      'inline-flex h-10 items-center justify-center rounded-giga px-4 text-[14px] font-bitcell uppercase tracking-[2px]',\n      'border border-giga-border bg-transparent text-giga-muted hover:text-giga-heading',\n      className,\n    )}\n    {...props}\n  />\n))\nAlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName\n",
+      "type": "registry:ui",
+      "target": "components/ui/alert-dialog.tsx"
+    }
+  ]
+}21:["$","div",null,{"children":[["$","h3",null,{"className":"mb-3 font-bitcell text-[14px] uppercase tracking-[2px] text-giga-teal","children":"Registry JSON"}],["$","pre",null,{"className":"rounded-giga border border-giga-border bg-giga-panel/60 p-4 text-[12px] text-giga-muted overflow-x-auto max-h-[280px]","children":["$","code",null,{"children":"$23"}]}]]}]
+24:T11b2,'use client'
+
+import * as React from 'react'
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog'
+import { cn } from '../lib/cn'
+
+export const AlertDialog = AlertDialogPrimitive.Root
+export const AlertDialogTrigger = AlertDialogPrimitive.Trigger
+export const AlertDialogPortal = AlertDialogPrimitive.Portal
+
+export const AlertDialogOverlay = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Overlay
+    ref={ref}
+    className={cn(
+      'fixed inset-0 z-50 bg-giga-overlay/80 backdrop-blur-sm',
+      'data-[state=open]:animate-in data-[state=closed]:animate-out',
+      'data-[state=open]:fade-in data-[state=closed]:fade-out',
+      className,
+    )}
+    {...props}
+  />
+))
+AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
+
+export const AlertDialogContent = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPortal>
+    <AlertDialogOverlay />
+    <AlertDialogPrimitive.Content
+      ref={ref}
+      className={cn(
+        'fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2',
+        'rounded-giga-xl border border-giga-live/40 bg-giga-card p-6',
+        'shadow-[0_0_40px_rgba(255,74,81,0.14)]',
+        'font-bitcell text-giga-heading',
+        'focus-visible:outline-none',
+        'data-[state=open]:animate-in data-[state=closed]:animate-out',
+        'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',
+        'data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95',
+        className,
+      )}
+      {...props}
+    />
+  </AlertDialogPortal>
+))
+AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
+
+export const AlertDialogHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn('flex flex-col gap-1', className)} {...props} />
+)
+AlertDialogHeader.displayName = 'AlertDialogHeader'
+
+export const AlertDialogFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={cn('mt-6 flex justify-end gap-2', className)} {...props} />
+)
+AlertDialogFooter.displayName = 'AlertDialogFooter'
+
+export const AlertDialogTitle = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Title
+    ref={ref}
+    className={cn('text-[24px] tracking-wide text-giga-live uppercase', className)}
+    {...props}
+  />
+))
+AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
+
+export const AlertDialogDescription = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Description
+    ref={ref}
+    className={cn('text-[14px] text-giga-muted', className)}
+    {...props}
+  />
+))
+AlertDialogDescription.displayName = AlertDialogPrimitive.Description.displayName
+
+export const AlertDialogAction = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Action>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Action
+    ref={ref}
+    className={cn(
+      'inline-flex h-10 items-center justify-center rounded-giga px-4 text-[14px] font-bitcell uppercase tracking-[2px]',
+      'bg-giga-live text-white hover:bg-giga-live/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-live',
+      className,
+    )}
+    {...props}
+  />
+))
+AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
+
+export const AlertDialogCancel = React.forwardRef<
+  React.ElementRef<typeof AlertDialogPrimitive.Cancel>,
+  React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
+>(({ className, ...props }, ref) => (
+  <AlertDialogPrimitive.Cancel
+    ref={ref}
+    className={cn(
+      'inline-flex h-10 items-center justify-center rounded-giga px-4 text-[14px] font-bitcell uppercase tracking-[2px]',
+      'border border-giga-border bg-transparent text-giga-muted hover:text-giga-heading',
+      className,
+    )}
+    {...props}
+  />
+))
+AlertDialogCancel.displayName = AlertDialogPrimitive.Cancel.displayName
+22:["$","$L14",null,{"value":"source","children":["$","div",null,{"className":"rounded-giga-xl border border-giga-border bg-giga-dark-card/60 p-6","children":["$","pre",null,{"className":"overflow-x-auto text-[13px] leading-[1.4]","children":["$","code",null,{"className":"font-bitcell text-giga-heading","children":"$24"}]}]}]}]

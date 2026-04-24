@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/pagination.tsx",
+      "content": "import * as React from 'react'\nimport { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react'\nimport { cn } from '../lib/cn'\n\nexport const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (\n  <nav\n    role=\"navigation\"\n    aria-label=\"pagination\"\n    className={cn('mx-auto flex w-full justify-center', className)}\n    {...props}\n  />\n)\nPagination.displayName = 'Pagination'\n\nexport const PaginationContent = React.forwardRef<HTMLUListElement, React.ComponentProps<'ul'>>(\n  ({ className, ...props }, ref) => (\n    <ul ref={ref} className={cn('flex flex-row items-center gap-1', className)} {...props} />\n  ),\n)\nPaginationContent.displayName = 'PaginationContent'\n\nexport const PaginationItem = React.forwardRef<HTMLLIElement, React.ComponentProps<'li'>>(\n  ({ className, ...props }, ref) => <li ref={ref} className={cn('', className)} {...props} />,\n)\nPaginationItem.displayName = 'PaginationItem'\n\ntype PaginationLinkProps = React.ComponentProps<'a'> & { isActive?: boolean }\n\nexport const PaginationLink = ({ className, isActive, ...props }: PaginationLinkProps) => (\n  <a\n    aria-current={isActive ? 'page' : undefined}\n    className={cn(\n      'inline-flex h-9 min-w-9 items-center justify-center rounded-giga border border-transparent px-3',\n      'text-[14px] font-bitcell uppercase tracking-[2px] text-giga-muted transition-colors',\n      'hover:border-giga-border hover:text-giga-heading',\n      isActive && 'border-giga-gold/60 bg-giga-panel text-giga-gold',\n      className,\n    )}\n    {...props}\n  />\n)\nPaginationLink.displayName = 'PaginationLink'\n\nexport const PaginationPrevious = ({ className, ...props }: React.ComponentProps<'a'>) => (\n  <PaginationLink aria-label=\"Go to previous page\" className={cn('gap-1 pl-2.5', className)} {...props}>\n    <ChevronLeft className=\"h-4 w-4\" />\n    <span>PREV</span>\n  </PaginationLink>\n)\nPaginationPrevious.displayName = 'PaginationPrevious'\n\nexport const PaginationNext = ({ className, ...props }: React.ComponentProps<'a'>) => (\n  <PaginationLink aria-label=\"Go to next page\" className={cn('gap-1 pr-2.5', className)} {...props}>\n    <span>NEXT</span>\n    <ChevronRight className=\"h-4 w-4\" />\n  </PaginationLink>\n)\nPaginationNext.displayName = 'PaginationNext'\n\nexport const PaginationEllipsis = ({ className, ...props }: React.ComponentProps<'span'>) => (\n  <span\n    aria-hidden\n    className={cn('flex h-9 w-9 items-center justify-center text-giga-muted', className)}\n    {...props}\n  >\n    <MoreHorizontal className=\"h-4 w-4\" />\n    <span className=\"sr-only\">More pages</span>\n  </span>\n)\nPaginationEllipsis.displayName = 'PaginationEllipsis'\n",
+      "type": "registry:ui",
+      "target": "components/ui/pagination.tsx"
+    }
+  ]
+}

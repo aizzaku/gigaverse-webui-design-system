@@ -1,0 +1,22 @@
+{
+  "name": "@gigaverse/registry",
+  "version": "0.1.0",
+  "description": "Builds shadcn-compatible registry JSON from @gigaverse/ui sources.",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsx src/build.ts",
+    "dev": "tsx --watch src/build.ts",
+    "smoke": "tsx src/smoke.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@gigaverse/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

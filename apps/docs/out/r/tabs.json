@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-tabs",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/tabs.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as TabsPrimitive from '@radix-ui/react-tabs'\nimport { cn } from '../lib/cn'\n\nexport const Tabs = TabsPrimitive.Root\n\nexport const TabsList = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.List>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.List\n    ref={ref}\n    className={cn(\n      'inline-flex items-center gap-1 rounded-giga-md border border-giga-border bg-giga-panel p-1',\n      className,\n    )}\n    {...props}\n  />\n))\nTabsList.displayName = TabsPrimitive.List.displayName\n\nexport const TabsTrigger = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Trigger>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.Trigger\n    ref={ref}\n    className={cn(\n      'inline-flex items-center justify-center rounded-giga-md px-3 py-1.5 text-[14px] font-bitcell',\n      'uppercase tracking-[2px] text-giga-muted transition-colors',\n      'hover:text-giga-heading',\n      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',\n      'data-[state=active]:bg-giga-dark-card data-[state=active]:text-giga-gold',\n      'data-[state=active]:border data-[state=active]:border-giga-gold/40',\n      'disabled:pointer-events-none disabled:opacity-50',\n      className,\n    )}\n    {...props}\n  />\n))\nTabsTrigger.displayName = TabsPrimitive.Trigger.displayName\n\nexport const TabsContent = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.Content\n    ref={ref}\n    className={cn(\n      'mt-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan rounded-giga',\n      className,\n    )}\n    {...props}\n  />\n))\nTabsContent.displayName = TabsPrimitive.Content.displayName",
+      "type": "registry:ui",
+      "target": "components/ui/tabs.tsx"
+    }
+  ]
+}

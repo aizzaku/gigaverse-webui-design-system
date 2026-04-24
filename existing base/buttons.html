@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 Button Variants — GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    .btn-gold-shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold-shimmer::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.25) 48%,
+        rgba(255, 255, 255, 0.35) 50%,
+        rgba(255, 255, 255, 0.25) 52%,
+        transparent 70%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-muted hover:text-giga-gold transition-colors">COVER</a>
+    <a href="colors.html" class="text-giga-muted hover:text-giga-gold transition-colors">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-gold">BUTTONS</a>
+    <a href="cards.html" class="text-giga-muted hover:text-giga-gold transition-colors">CARDS</a>
+    <a href="inputs.html" class="text-giga-muted hover:text-giga-gold transition-colors">INPUTS</a>
+    <a href="layout.html" class="text-giga-muted hover:text-giga-gold transition-colors">LAYOUT</a>
+  </nav>
+
+  <main class="px-12 pt-10 pb-16">
+    <p class="text-giga-teal text-[11px] tracking-[3px] uppercase mb-3">03 — COMPONENTS</p>
+    <h1 class="text-[38px] text-white tracking-[0.04em] leading-none mb-12">BUTTON VARIANTS</h1>
+
+    <div class="grid grid-cols-4 gap-10 mb-14">
+
+      <!-- PRIMARY (GOLD CTA) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">PRIMARY (GOLD CTA)</p>
+        <button
+          class="btn-gold-shimmer border-2 border-giga-gold rounded-md px-8 py-2.5 text-[20px] text-giga-button-text tracking-[2px] font-bold cursor-pointer"
+          style="background: linear-gradient(180deg, #ffe070 0%, #f0c040 48%, #d8a020 52%, #c08010 100%); box-shadow: inset 0 1px 0 rgba(255,245,204,0.45), 0 2px 0 0 rgba(0,0,0,0.4);"
+        >PLAY NOW</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>PlayNowButton &middot; gold gradient</p>
+          <p>border-2 &middot; border-giga-gold</p>
+          <p>Shimmer sweep animation</p>
+        </div>
+      </div>
+
+      <!-- SECONDARY (OUTLINED) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">SECONDARY (OUTLINED)</p>
+        <button
+          class="rounded-md border border-giga-cyan bg-giga-panel/80 px-6 py-2 text-[16px] text-giga-cyan tracking-[2px] cursor-pointer hover:bg-giga-teal/10 transition-colors"
+        >JOIN DISCORD</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>Teal outline &middot; bg-giga-panel/80</p>
+          <p>hover:bg-giga-teal/10</p>
+          <p>Used for Discord CTA</p>
+        </div>
+      </div>
+
+      <!-- TERTIARY (TEXT) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">TERTIARY (TEXT)</p>
+        <button
+          class="text-[16px] text-giga-muted tracking-[2px] cursor-pointer hover:text-giga-heading transition-colors bg-transparent border-none py-2"
+        >VIEW DOCS</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>Text only &middot; text-giga-muted</p>
+          <p>hover:text-giga-heading</p>
+          <p>Navigation, footer links</p>
+        </div>
+      </div>
+
+      <!-- GHOST (DARK) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">GHOST (DARK)</p>
+        <button
+          class="rounded-full border border-giga-border bg-giga-dark-card/80 px-5 py-1.5 text-[14px] text-giga-muted tracking-[1.8px] cursor-pointer hover:border-giga-cyan/50 transition-colors"
+        >DECLINE</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-full &middot; bg-giga-dark-card/80</p>
+          <p>border-giga-border</p>
+          <p>hover:border-giga-cyan/50</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-4 gap-10">
+
+      <!-- ACCEPT (GOLD PILL) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">ACCEPT (GOLD PILL)</p>
+        <button
+          class="rounded-full border-2 border-giga-gold px-6 py-2 text-[16px] text-giga-button-text tracking-[2px] cursor-pointer"
+          style="background: linear-gradient(180deg, #ffe070 0%, #f0c040 48%, #d8a020 52%, #c08010 100%);"
+        >ACCEPT TERMS</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-full &middot; gold gradient</p>
+          <p>bg-gradient giga-gold-light to giga-gold-dark</p>
+        </div>
+      </div>
+
+      <!-- SMALL ACTION (TEAL PILL) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">SMALL ACTION (TEAL PILL)</p>
+        <button
+          class="rounded-full border border-giga-cyan/70 bg-giga-teal/10 px-4 py-1 text-[10px] text-giga-cyan tracking-[1.6px] cursor-pointer hover:bg-giga-teal/20 transition-colors"
+        >CONNECT</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-full &middot; bg-giga-teal/10</p>
+          <p>border-giga-cyan/70</p>
+          <p>Dropdown actions, Discord connect</p>
+        </div>
+      </div>
+
+      <!-- OPTION CARD -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">OPTION CARD</p>
+        <button
+          class="rounded-lg border-2 px-5 py-3.5 text-left cursor-pointer hover:border-giga-cyan/60 transition-colors w-full"
+          style="border-color: rgba(4,131,171,0.3); background: rgba(8,20,32,0.6);"
+        >
+          <span class="block text-[16px] text-white tracking-wide">Bridge ETH to Abstract</span>
+          <span class="block text-[13px] text-giga-muted mt-1 leading-snug">After bridging, we'll auto-prompt you...</span>
+        </button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-lg &middot; border-2</p>
+          <p>FundingModal payment options</p>
+          <p>hover:border-giga-cyan/60</p>
+        </div>
+      </div>
+
+      <!-- FACTION JOIN -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">FACTION JOIN</p>
+        <button
+          class="rounded-md border-2 px-6 py-2 text-[16px] tracking-[2px] cursor-pointer"
+          style="background: linear-gradient(180deg, #FA4D4D 0%, #C32454 100%); border-color: #C32454; color: #fff5ee;"
+        >JOIN CRUSADER</button>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>Two-tone faction gradient</p>
+          <p>border-2 faction-primary</p>
+          <p>Text: #1d0d00 (dark brown)</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="w-full h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(4,131,171,0.4) 50%, transparent 100%);"></div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-toggle",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/toggle.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as TogglePrimitive from '@radix-ui/react-toggle'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '../lib/cn'\n\nexport const toggleVariants = cva(\n  'inline-flex items-center justify-center rounded-giga-md text-[14px] font-bitcell tracking-[2px] uppercase ' +\n    'transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan ' +\n    'disabled:pointer-events-none disabled:opacity-50 ' +\n    'hover:bg-giga-panel hover:text-giga-heading ' +\n    'data-[state=on]:bg-giga-teal/20 data-[state=on]:text-giga-cyan data-[state=on]:border-giga-cyan/60',\n  {\n    variants: {\n      variant: {\n        default: 'bg-transparent text-giga-muted border border-transparent',\n        outline:\n          'border border-giga-border bg-giga-panel/60 text-giga-muted hover:bg-giga-teal/10',\n      },\n      size: {\n        sm: 'h-8 px-2',\n        md: 'h-10 px-3',\n        lg: 'h-11 px-5',\n      },\n    },\n    defaultVariants: { variant: 'default', size: 'md' },\n  },\n)\n\nexport interface ToggleProps\n  extends React.ComponentPropsWithoutRef<typeof TogglePrimitive.Root>,\n    VariantProps<typeof toggleVariants> {}\n\nexport const Toggle = React.forwardRef<\n  React.ElementRef<typeof TogglePrimitive.Root>,\n  ToggleProps\n>(({ className, variant, size, ...props }, ref) => (\n  <TogglePrimitive.Root\n    ref={ref}\n    className={cn(toggleVariants({ variant, size }), className)}\n    {...props}\n  />\n))\nToggle.displayName = TogglePrimitive.Root.displayName\n",
+      "type": "registry:ui",
+      "target": "components/ui/toggle.tsx"
+    }
+  ]
+}

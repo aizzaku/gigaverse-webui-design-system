@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "type": "registry:ui",
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/dialog.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as DialogPrimitive from '@radix-ui/react-dialog'\nimport { cn } from '../lib/cn'\n\nexport const Dialog = DialogPrimitive.Root\nexport const DialogTrigger = DialogPrimitive.Trigger\nexport const DialogPortal = DialogPrimitive.Portal\nexport const DialogClose = DialogPrimitive.Close\n\nexport const DialogOverlay = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Overlay>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Overlay\n    ref={ref}\n    className={cn(\n      'fixed inset-0 z-50 bg-giga-overlay/80 backdrop-blur-sm',\n      'data-[state=open]:animate-in data-[state=closed]:animate-out',\n      'data-[state=open]:fade-in data-[state=closed]:fade-out',\n      className,\n    )}\n    {...props}\n  />\n))\nDialogOverlay.displayName = DialogPrimitive.Overlay.displayName\n\nexport const DialogContent = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Content>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>\n>(({ className, children, ...props }, ref) => (\n  <DialogPortal>\n    <DialogOverlay />\n    <DialogPrimitive.Content\n      ref={ref}\n      className={cn(\n        'fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2',\n        'rounded-giga-xl border border-giga-border bg-giga-card p-6',\n        'shadow-[0_0_40px_rgba(2,199,215,0.08)]',\n        'font-bitcell text-giga-heading',\n        'focus-visible:outline-none',\n        'data-[state=open]:animate-in data-[state=closed]:animate-out',\n        'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',\n        'data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95',\n        className,\n      )}\n      {...props}\n    >\n      {children}\n    </DialogPrimitive.Content>\n  </DialogPortal>\n))\nDialogContent.displayName = DialogPrimitive.Content.displayName\n\nexport const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('flex flex-col gap-1', className)} {...props} />\n)\nDialogHeader.displayName = 'DialogHeader'\n\nexport const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (\n  <div className={cn('mt-6 flex justify-end gap-2', className)} {...props} />\n)\nDialogFooter.displayName = 'DialogFooter'\n\nexport const DialogTitle = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Title>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Title>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Title\n    ref={ref}\n    className={cn('text-[24px] tracking-wide text-giga-heading', className)}\n    {...props}\n  />\n))\nDialogTitle.displayName = DialogPrimitive.Title.displayName\n\nexport const DialogDescription = React.forwardRef<\n  React.ElementRef<typeof DialogPrimitive.Description>,\n  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>\n>(({ className, ...props }, ref) => (\n  <DialogPrimitive.Description\n    ref={ref}\n    className={cn('text-[14px] text-giga-muted', className)}\n    {...props}\n  />\n))\nDialogDescription.displayName = DialogPrimitive.Description.displayName",
+      "type": "registry:ui",
+      "target": "components/ui/dialog.tsx"
+    }
+  ]
+}

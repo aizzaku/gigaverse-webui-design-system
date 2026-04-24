@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 — Color Tokens | GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-overlay': '#02060c',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-live-bg': '#5a1111',
+            'giga-live-text': '#ffb2b2',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell text-white">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-muted hover:text-giga-gold transition-colors">COVER</a>
+    <a href="colors.html" class="text-giga-gold">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-muted hover:text-giga-gold transition-colors">BUTTONS</a>
+    <a href="cards.html" class="text-giga-muted hover:text-giga-gold transition-colors">CARDS</a>
+    <a href="inputs.html" class="text-giga-muted hover:text-giga-gold transition-colors">INPUTS</a>
+    <a href="layout.html" class="text-giga-muted hover:text-giga-gold transition-colors">LAYOUT</a>
+  </nav>
+
+  <main class="px-12 py-8 max-w-[1400px]">
+
+    <p class="text-giga-teal text-[13px] tracking-[3px] uppercase mb-3">01 — COLOR TOKENS</p>
+    <h1 class="text-[40px] text-white leading-none mb-10">COLOR PALETTE</h1>
+
+    <!-- CORE PALETTE -->
+    <h2 class="text-giga-gold text-[18px] tracking-wider mb-4">CORE PALETTE</h2>
+    <div class="flex gap-4 mb-10 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg border border-giga-border" style="background:#060b14;"></div>
+        <p class="text-white text-[13px] mt-2">giga-navy</p>
+        <p class="text-giga-muted text-[12px]">#060b14</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#081420;"></div>
+        <p class="text-white text-[13px] mt-2">giga-panel</p>
+        <p class="text-giga-muted text-[12px]">#081420</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#0a1e2e;"></div>
+        <p class="text-white text-[13px] mt-2">giga-card</p>
+        <p class="text-giga-muted text-[12px]">#0a1e2e</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#070d18;"></div>
+        <p class="text-white text-[13px] mt-2">giga-dark-card</p>
+        <p class="text-giga-muted text-[12px]">#070d18</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#02060c;"></div>
+        <p class="text-white text-[13px] mt-2">giga-overlay</p>
+        <p class="text-giga-muted text-[12px]">#02060c</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#0c2030;"></div>
+        <p class="text-white text-[13px] mt-2">giga-border-dark</p>
+        <p class="text-giga-muted text-[12px]">#0c2030</p>
+      </div>
+    </div>
+
+    <!-- ACCENT COLORS -->
+    <h2 class="text-giga-gold text-[18px] tracking-wider mb-4">ACCENT COLORS</h2>
+    <div class="flex gap-4 mb-3 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#F5C563;"></div>
+        <p class="text-white text-[13px] mt-2">giga-gold</p>
+        <p class="text-giga-muted text-[12px]">#F5C563</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#F5D06B;"></div>
+        <p class="text-white text-[13px] mt-2">giga-gold-light</p>
+        <p class="text-giga-muted text-[12px]">#F5D06B</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#E89B0C;"></div>
+        <p class="text-white text-[13px] mt-2">giga-gold-dark</p>
+        <p class="text-giga-muted text-[12px]">#E89B0C</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#0483AB;"></div>
+        <p class="text-white text-[13px] mt-2">giga-teal</p>
+        <p class="text-giga-muted text-[12px]">#0483AB</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#02C7D7;"></div>
+        <p class="text-white text-[13px] mt-2">giga-cyan</p>
+        <p class="text-giga-muted text-[12px]">#02C7D7</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#3dd94e;"></div>
+        <p class="text-white text-[13px] mt-2">giga-green</p>
+        <p class="text-giga-muted text-[12px]">#3dd94e</p>
+      </div>
+    </div>
+    <div class="flex gap-4 mb-10 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#78FD95;"></div>
+        <p class="text-white text-[13px] mt-2">giga-green-light</p>
+        <p class="text-giga-muted text-[12px]">#78FD95</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#4FC3F7;"></div>
+        <p class="text-white text-[13px] mt-2">giga-sky</p>
+        <p class="text-giga-muted text-[12px]">#4FC3F7</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#CC86CB;"></div>
+        <p class="text-white text-[13px] mt-2">giga-lavender</p>
+        <p class="text-giga-muted text-[12px]">#CC86CB</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#7C3AED;"></div>
+        <p class="text-white text-[13px] mt-2">giga-discord</p>
+        <p class="text-giga-muted text-[12px]">#7C3AED</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#3a1e00;"></div>
+        <p class="text-white text-[13px] mt-2">giga-button-text</p>
+        <p class="text-giga-muted text-[12px]">#3a1e00</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#7a8a9e;"></div>
+        <p class="text-white text-[13px] mt-2">giga-muted</p>
+        <p class="text-giga-muted text-[12px]">#7a8a9e</p>
+      </div>
+    </div>
+
+    <!-- TEXT COLORS -->
+    <h2 class="text-giga-gold text-[18px] tracking-wider mb-4">TEXT COLORS</h2>
+    <div class="flex gap-4 mb-10 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#e0e0e0;"></div>
+        <p class="text-white text-[13px] mt-2">giga-heading</p>
+        <p class="text-giga-muted text-[12px]">#e0e0e0</p>
+        <p class="text-giga-muted text-[11px]">Primary headings</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#7a8a9e;"></div>
+        <p class="text-white text-[13px] mt-2">giga-muted</p>
+        <p class="text-giga-muted text-[12px]">#7a8a9e</p>
+        <p class="text-giga-muted text-[11px]">Labels, captions</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#e5e7eb;"></div>
+        <p class="text-white text-[13px] mt-2">gray-200</p>
+        <p class="text-giga-muted text-[12px]">#e5e7eb</p>
+        <p class="text-giga-muted text-[11px]">Body prose</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#F5C563;"></div>
+        <p class="text-white text-[13px] mt-2">giga-gold</p>
+        <p class="text-giga-muted text-[12px]">#F5C563</p>
+        <p class="text-giga-muted text-[11px]">Accent text</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#02C7D7;"></div>
+        <p class="text-white text-[13px] mt-2">giga-cyan</p>
+        <p class="text-giga-muted text-[12px]">#02C7D7</p>
+        <p class="text-giga-muted text-[11px]">Link text</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#f87171;"></div>
+        <p class="text-white text-[13px] mt-2">red-400</p>
+        <p class="text-giga-muted text-[12px]">#f87171</p>
+        <p class="text-giga-muted text-[11px]">Error text</p>
+      </div>
+    </div>
+
+    <!-- FACTION COLORS -->
+    <h2 class="text-giga-gold text-[18px] tracking-wider mb-4">FACTION COLORS</h2>
+    <div class="flex gap-4 mb-10 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#C32454;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#FA4D4D;"></div>
+        <p class="text-white text-[13px] mt-2">Crusader</p>
+        <p class="text-giga-muted text-[12px]">#C32454 / #FA4D4D</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#EB4F36;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#EB8575;"></div>
+        <p class="text-white text-[13px] mt-2">Overseer</p>
+        <p class="text-giga-muted text-[12px]">#EB4F36 / #EB8575</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#9026CD;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#CC86CB;"></div>
+        <p class="text-white text-[13px] mt-2">Athena</p>
+        <p class="text-giga-muted text-[12px]">#9026CD / #CC86CB</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#0383AC;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#88FFEB;"></div>
+        <p class="text-white text-[13px] mt-2">Archon</p>
+        <p class="text-giga-muted text-[12px]">#0383AC / #88FFEB</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#229062;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#78FD95;"></div>
+        <p class="text-white text-[13px] mt-2">Foxglove</p>
+        <p class="text-giga-muted text-[12px]">#229062 / #78FD95</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#C7DCD0;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#FFFFFF;"></div>
+        <p class="text-white text-[13px] mt-2">Chobo</p>
+        <p class="text-giga-muted text-[12px]">#C7DCD0 / #FFFFFF</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#FEC733;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#FFC833;"></div>
+        <p class="text-white text-[13px] mt-2">Summoner</p>
+        <p class="text-giga-muted text-[12px]">#FEC733 / #FFC833</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[34px] rounded-t-lg" style="background:#562344;"></div>
+        <div class="w-[120px] h-[26px] rounded-b-lg" style="background:#A85E8E;"></div>
+        <p class="text-white text-[13px] mt-2">Gigus</p>
+        <p class="text-giga-muted text-[12px]">#562344 / #A85E8E</p>
+      </div>
+    </div>
+
+    <!-- RARITY COLORS -->
+    <h2 class="text-giga-gold text-[18px] tracking-wider mb-4">RARITY COLORS</h2>
+    <div class="flex gap-4 mb-10 flex-wrap">
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#E6E6E6;"></div>
+        <p class="text-white text-[13px] mt-2">Common</p>
+        <p class="text-giga-muted text-[12px]">#E6E6E6</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#4DCC4D;"></div>
+        <p class="text-white text-[13px] mt-2">Uncommon</p>
+        <p class="text-giga-muted text-[12px]">#4DCC4D</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#4D4DFF;"></div>
+        <p class="text-white text-[13px] mt-2">Rare</p>
+        <p class="text-giga-muted text-[12px]">#4D4DFF</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#CC33CC;"></div>
+        <p class="text-white text-[13px] mt-2">Epic</p>
+        <p class="text-giga-muted text-[12px]">#CC33CC</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#FFCC00;"></div>
+        <p class="text-white text-[13px] mt-2">Legendary</p>
+        <p class="text-giga-muted text-[12px]">#FFCC00</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#CC4D00;"></div>
+        <p class="text-white text-[13px] mt-2">Relic</p>
+        <p class="text-giga-muted text-[12px]">#CC4D00</p>
+      </div>
+      <div class="flex flex-col items-start">
+        <div class="w-[120px] h-[60px] rounded-lg" style="background:#FFCC33;"></div>
+        <p class="text-white text-[13px] mt-2">Giga</p>
+        <p class="text-giga-muted text-[12px]">#FFCC33</p>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

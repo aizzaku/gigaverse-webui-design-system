@@ -1,0 +1,25 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-picker",
+  "type": "registry:ui",
+  "description": "Date picker — popover trigger with calendar content; bitcell display format.",
+  "dependencies": [
+    "date-fns",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "button",
+    "calendar",
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "components/ui/date-picker.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { format } from 'date-fns'\nimport { Calendar as CalendarIcon } from 'lucide-react'\nimport { cn } from '../lib/cn'\nimport { Button } from './button'\nimport { Calendar } from './calendar'\nimport { Popover, PopoverContent, PopoverTrigger } from './popover'\n\nexport interface DatePickerProps {\n  value?: Date\n  defaultValue?: Date\n  onChange?: (date: Date | undefined) => void\n  placeholder?: string\n  disabled?: boolean\n  /** date-fns format string. */\n  displayFormat?: string\n  className?: string\n  /** Width of the trigger. */\n  width?: number | string\n}\n\nexport function DatePicker({\n  value: controlled,\n  defaultValue,\n  onChange,\n  placeholder = 'PICK A DATE',\n  disabled,\n  displayFormat = 'MMM d, yyyy',\n  className,\n  width = 240,\n}: DatePickerProps) {\n  const [uncontrolled, setUncontrolled] = React.useState<Date | undefined>(defaultValue)\n  const [open, setOpen] = React.useState(false)\n\n  const value = controlled !== undefined ? controlled : uncontrolled\n  const setValue = (next: Date | undefined) => {\n    if (controlled === undefined) setUncontrolled(next)\n    onChange?.(next)\n  }\n\n  return (\n    <Popover open={open} onOpenChange={setOpen}>\n      <PopoverTrigger asChild>\n        <Button\n          variant=\"secondary\"\n          disabled={disabled}\n          className={cn('justify-start gap-3 font-bitcell tracking-[1.5px]', className)}\n          style={{ width }}\n        >\n          <CalendarIcon className=\"h-4 w-4 shrink-0 opacity-70\" aria-hidden=\"true\" />\n          <span className={cn(!value && 'text-giga-muted')}>\n            {value ? format(value, displayFormat).toUpperCase() : placeholder}\n          </span>\n        </Button>\n      </PopoverTrigger>\n      <PopoverContent className=\"w-auto p-0\" align=\"start\">\n        <Calendar\n          mode=\"single\"\n          selected={value}\n          onSelect={(d) => {\n            setValue(d)\n            if (d) setOpen(false)\n          }}\n          autoFocus\n        />\n      </PopoverContent>\n    </Popover>\n  )\n}\nDatePicker.displayName = 'DatePicker'\n",
+      "type": "registry:ui",
+      "target": "components/ui/date-picker.tsx"
+    }
+  ]
+}

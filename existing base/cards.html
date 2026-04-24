@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 Card Variants — GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-muted hover:text-giga-gold transition-colors">COVER</a>
+    <a href="colors.html" class="text-giga-muted hover:text-giga-gold transition-colors">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-muted hover:text-giga-gold transition-colors">BUTTONS</a>
+    <a href="cards.html" class="text-giga-gold">CARDS</a>
+    <a href="inputs.html" class="text-giga-muted hover:text-giga-gold transition-colors">INPUTS</a>
+    <a href="layout.html" class="text-giga-muted hover:text-giga-gold transition-colors">LAYOUT</a>
+  </nav>
+
+  <main class="px-12 pt-10 pb-16">
+    <p class="text-giga-teal text-[11px] tracking-[3px] uppercase mb-3">04 — COMPONENTS</p>
+    <h1 class="text-[38px] text-white tracking-[0.04em] leading-none mb-12">CARD VARIANTS</h1>
+
+    <div class="grid grid-cols-4 gap-8">
+
+      <!-- STANDARD CARD -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">STANDARD CARD</p>
+        <div class="rounded-xl border border-giga-border bg-giga-dark-card/85 px-5 py-5">
+          <p class="text-giga-gold text-[42px] leading-none tracking-wide">12,543</p>
+          <p class="text-giga-muted text-[11px] tracking-[2px] uppercase mt-2">TOTAL PLAYERS</p>
+        </div>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-xl &middot; border-giga-border</p>
+          <p>bg-giga-dark-card/85 &middot; px-5 py-5</p>
+          <p>Used in StatsRow</p>
+        </div>
+      </div>
+
+      <!-- TWEET CARD -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">TWEET CARD</p>
+        <div class="rounded-xl border border-giga-border bg-giga-panel p-3 sm:p-4 hover:border-giga-muted/40 transition-colors">
+          <div class="flex items-center gap-2.5 mb-2.5">
+            <div class="w-9 h-9 rounded-full bg-giga-card flex-shrink-0"></div>
+            <div>
+              <p class="text-white text-[14px] font-bold leading-tight">Player Name</p>
+              <p class="text-giga-muted text-[12px] leading-tight">@handle</p>
+            </div>
+          </div>
+          <p class="text-gray-200 text-[14px] leading-snug">This game is incredible, been grinding dungeons all week!</p>
+        </div>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-xl &middot; bg-giga-panel</p>
+          <p>border-giga-border</p>
+          <p>hover:border-giga-muted/40</p>
+        </div>
+      </div>
+
+      <!-- EQUIPMENT STRIP -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">EQUIPMENT STRIP</p>
+        <div class="rounded-[14px] border border-giga-border bg-giga-dark-card/80 p-2.5">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style="background: rgba(204, 51, 204, 0.10);">
+              <div class="w-4 h-4 rounded-sm" style="background: #CC33CC;"></div>
+            </div>
+            <div>
+              <p class="text-giga-muted text-[9px] tracking-[1.5px] uppercase leading-none">HEAD</p>
+              <p class="text-white text-[15px] leading-tight mt-0.5">Crimson Helm</p>
+              <p class="text-[12px] leading-none mt-0.5" style="color: #CC33CC;">Epic</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-[14px] &middot; bg-giga-dark-card/80</p>
+          <p>border-giga-border</p>
+          <p>Icon box with rarity fill at 10%</p>
+        </div>
+      </div>
+
+      <!-- INFO CARD (RECESSED) -->
+      <div>
+        <p class="text-giga-gold text-[11px] tracking-[2.5px] uppercase mb-4">INFO CARD (RECESSED)</p>
+        <div class="rounded-lg border border-giga-border/50 bg-giga-dark-card/50 px-4 py-3">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-giga-discord/20 flex items-center justify-center flex-shrink-0">
+              <div class="w-3.5 h-3.5 rounded-full" style="background: #7C3AED;"></div>
+            </div>
+            <p class="text-giga-muted text-[14px]">Connect Discord for chat</p>
+          </div>
+        </div>
+        <div class="mt-4 text-[11px] text-giga-muted leading-relaxed tracking-wide">
+          <p>rounded-lg &middot; bg-giga-dark-card/50</p>
+          <p>border-giga-border/50</p>
+          <p>Discord tag, wallet info</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="w-full h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(4,131,171,0.4) 50%, transparent 100%);"></div>
+
+</body>
+</html>

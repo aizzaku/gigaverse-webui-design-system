@@ -1,0 +1,202 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "gigaverse",
+  "homepage": "https://ui.gigaverse.gg",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "description": "Gigaverse button — 8 variants incl. gold shimmer CTA, faction join, option card."
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "description": "Card with 6 variants: standard, tweet, strip, recessed, panel, stat."
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "description": "Text input with default / available / error states."
+    },
+    {
+      "name": "label",
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "description": "Badge with rarity and faction variants."
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "description": "Sonner-backed toaster themed for Gigaverse."
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui"
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui"
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui"
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui"
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui"
+    },
+    {
+      "name": "select",
+      "type": "registry:ui"
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "description": "Command palette (cmdk) with optional dialog wrapper."
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "description": "Searchable single-select — popover + command palette + check icon."
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "description": "react-hook-form wrapper with FormField / FormItem / FormLabel / FormControl / FormMessage."
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui"
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui"
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "description": "Date calendar — react-day-picker wrapped in Gigaverse theme (gold selected, teal ranges)."
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "description": "Date picker — popover trigger with calendar content; bitcell display format."
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui"
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui"
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui"
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui"
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui"
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui"
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui"
+    },
+    {
+      "name": "table",
+      "type": "registry:ui"
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "description": "Embla-backed carousel with prev/next arrows (gigaverse.io landing pattern)."
+    },
+    {
+      "name": "tweet-carousel",
+      "type": "registry:ui",
+      "description": "Social quote carousel — auto-advance (6s), pauses on hover, gold-pill dot navigation."
+    },
+    {
+      "name": "giga-primitives",
+      "type": "registry:ui",
+      "description": "Gigaverse-native primitives: StatusPip, PingPongLoader, FactionBadge, FactionJoinButton, RarityTag, ShimmerButton, AccentDivider, SectionDivider, StepProgress, StepProgressBar, StatBlock, SectionHeader, NumberedSectionHeader, LeftBorderAccent, CertificationRow, FactionPopulationCounter, SnapSection, EquipmentStrip, SectionAmbientPixels, LandingNavbar, LandingFooter."
+    },
+    {
+      "name": "giga-loader",
+      "type": "registry:ui",
+      "description": "Unicode/braille dot loaders (~100 presets via @dot-loaders/react) themed for Gigaverse — GigaLoader, GigaLoaderInline, GigaLoaderOverlay, GigaLoaderProvider, GigaLoaderPicker."
+    },
+    {
+      "name": "landing-modal-shell",
+      "type": "registry:ui",
+      "description": "LandingModalShell — branded Radix dialog with 3px teal/gold border, gradient header, and pixel close button."
+    }
+  ]
+}

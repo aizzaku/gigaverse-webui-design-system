@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Font slots
+ * Bitcell + m5x7 are the authoritative Gigaverse fonts. If ttf/woff2 files
+ * are not shipped (e.g. local dev), the @font-face rules silently fall through
+ * and the `Bitcell`/`m5x7` font-family slots resolve to the next entry in
+ * fontFamilies (VT323), which is loaded from Google Fonts below.
+ *
+ * To ship real fonts, drop the files at /fonts/Bitcell.woff2 and
+ * /fonts/m5x7.woff2 in the consuming app's public dir.
+ */
+@font-face {
+  font-family: 'Bitcell';
+  src: url('/fonts/Bitcell.woff2') format('woff2'),
+       url('/fonts/Bitcell.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'm5x7';
+  src: url('/fonts/m5x7.woff2') format('woff2'),
+       url('/fonts/m5x7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html, body {
+    background-color: #060b14;
+    color: #e0e0e0;
+    font-family: 'Bitcell', 'VT323', monospace;
+  }
+  * {
+    border-color: rgba(4, 131, 171, 0.2);
+  }
+
+  .image-pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Thin scrollbar matching Gigaverse aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a3a4a;
+  border-radius: 4px;
+}

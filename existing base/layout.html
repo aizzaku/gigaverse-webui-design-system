@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout & Animation — GIGAVERSE Design System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'giga-navy': '#060b14',
+            'giga-panel': '#081420',
+            'giga-card': '#0a1e2e',
+            'giga-dark-card': '#070d18',
+            'giga-heading': '#e0e0e0',
+            'giga-muted': '#7a8a9e',
+            'giga-gold': '#F5C563',
+            'giga-gold-light': '#F5D06B',
+            'giga-gold-dark': '#E89B0C',
+            'giga-button-text': '#3a1e00',
+            'giga-teal': '#0483AB',
+            'giga-cyan': '#02C7D7',
+            'giga-green': '#3dd94e',
+            'giga-green-light': '#78FD95',
+            'giga-sky': '#4FC3F7',
+            'giga-lavender': '#CC86CB',
+            'giga-discord': '#7C3AED',
+            'giga-live': '#ff7a7a',
+            'giga-border': 'rgba(4,131,171,0.2)',
+            'giga-border-dark': '#0c2030',
+          },
+          fontFamily: {
+            'bitcell': ['VT323', 'monospace'],
+            'm5x7': ['VT323', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-giga-navy min-h-screen font-bitcell flex flex-col">
+
+  <nav class="flex items-center gap-6 px-12 py-4 text-sm tracking-wider">
+    <a href="index.html" class="text-giga-muted hover:text-giga-gold transition-colors">COVER</a>
+    <a href="colors.html" class="text-giga-muted hover:text-giga-gold transition-colors">COLORS</a>
+    <a href="typography.html" class="text-giga-muted hover:text-giga-gold transition-colors">TYPOGRAPHY</a>
+    <a href="buttons.html" class="text-giga-muted hover:text-giga-gold transition-colors">BUTTONS</a>
+    <a href="cards.html" class="text-giga-muted hover:text-giga-gold transition-colors">CARDS</a>
+    <a href="inputs.html" class="text-giga-muted hover:text-giga-gold transition-colors">INPUTS</a>
+    <a href="layout.html" class="text-giga-gold">LAYOUT</a>
+  </nav>
+
+  <main class="flex-1 px-16 py-10">
+
+    <p class="text-giga-teal text-[12px] uppercase tracking-[3px] mb-2">06 — LAYOUT & ANIMATION</p>
+    <h1 class="text-[36px] text-white tracking-[0.04em] leading-none mb-10">LAYOUT PATTERNS & SPACING</h1>
+
+    <div class="grid grid-cols-2 gap-16">
+
+      <!-- LEFT COLUMN -->
+      <div class="space-y-10">
+
+        <!-- Snap Section Structure -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">SNAP SECTION STRUCTURE</p>
+          <div class="space-y-2">
+            <div class="bg-giga-panel border border-giga-border rounded px-4 py-2 text-center">
+              <span class="text-giga-muted text-[13px]">LandingNavbar — 52px / 56px</span>
+            </div>
+            <div class="relative bg-giga-dark-card/50 border border-giga-border rounded px-4 py-10 text-center min-h-[140px] flex items-center justify-center">
+              <div>
+                <span class="text-giga-heading text-[15px]">SnapSection</span>
+                <br>
+                <span class="text-giga-muted text-[12px]">h = 100dvh · snap-start · overflow-auto</span>
+              </div>
+              <div class="absolute right-3 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+                <div class="w-[5px] h-[5px] rounded-full bg-giga-gold"></div>
+                <div class="w-[5px] h-[5px] rounded-full bg-giga-muted/40"></div>
+                <div class="w-[5px] h-[5px] rounded-full bg-giga-muted/40"></div>
+                <div class="w-[5px] h-[5px] rounded-full bg-giga-muted/40"></div>
+                <div class="w-[5px] h-[5px] rounded-full bg-giga-muted/40"></div>
+              </div>
+            </div>
+            <div class="bg-giga-panel border border-giga-border rounded px-4 py-2 text-center">
+              <span class="text-giga-muted text-[13px]">LandingFooter — 56px / 60px</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Grid Patterns -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">SECTION GRID PATTERNS</p>
+          <div class="flex gap-2">
+            <div class="w-[40%] bg-giga-dark-card/30 border border-giga-border rounded px-3 py-6 text-center">
+              <span class="text-giga-muted text-[13px]">Text 1/5 (40%)</span>
+            </div>
+            <div class="w-[60%] bg-giga-dark-card/50 border border-giga-border rounded px-3 py-6 text-center">
+              <span class="text-giga-muted text-[13px]">Content 4/5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container Padding -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">CONTAINER PADDING</p>
+          <div class="space-y-2">
+            <p class="text-giga-cyan text-[14px] font-mono">px-6 sm:px-8 lg:px-10</p>
+            <p class="text-giga-cyan text-[14px] font-mono">py-3 sm:py-6 md:py-8 xl:py-10</p>
+            <p class="text-giga-cyan text-[14px] font-mono">max-w-[1440px] mx-auto</p>
+          </div>
+        </div>
+
+        <!-- Border Radius Scale -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">BORDER RADIUS SCALE</p>
+          <div class="flex gap-3 items-end">
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border rounded-md"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">6px</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-md</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border rounded-lg"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">8px</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-lg</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border rounded-xl"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">12px</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-xl</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border" style="border-radius: 14px;"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">14px</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border" style="border-radius: 16px;"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">16px</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-2xl</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[40px] h-[30px] bg-giga-card border border-giga-border" style="border-radius: 20px;"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">20px</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-3xl</p>
+            </div>
+            <div class="text-center">
+              <div class="w-[30px] h-[30px] bg-giga-card border border-giga-border rounded-full"></div>
+              <p class="text-giga-muted text-[10px] mt-1.5">full</p>
+              <p class="text-giga-muted/60 text-[10px]">rounded-full</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Divider -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">SECTION DIVIDER</p>
+          <div class="h-px w-full bg-gradient-to-r from-transparent via-giga-teal to-transparent opacity-40 mb-3"></div>
+          <p class="text-giga-muted text-[11px] font-mono">bg-gradient-to-r · from-transparent via-giga-teal to-transparent · opacity-40</p>
+        </div>
+
+        <!-- Left Accent Border -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">LEFT ACCENT BORDER</p>
+          <div class="flex gap-4">
+            <div class="border-l-2 border-giga-cyan pl-3 py-1.5">
+              <span class="text-giga-muted text-[13px]">Customize section</span>
+            </div>
+            <div class="border-l-2 border-giga-gold pl-3 py-1.5">
+              <span class="text-giga-muted text-[13px]">Factions / Market</span>
+            </div>
+            <div class="border-l-2 border-giga-sky pl-3 py-1.5">
+              <span class="text-giga-muted text-[13px]">Dungeons section</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="space-y-10">
+
+        <!-- Animation System -->
+        <div>
+          <p class="text-giga-gold text-[13px] uppercase tracking-[2px] mb-4">ANIMATION SYSTEM</p>
+          <p class="text-giga-muted text-[13px] leading-relaxed">All animations via motion/react (Framer Motion). Variants centralized in animationVariants.ts.</p>
+        </div>
+
+        <!-- Entrance Variants -->
+        <div>
+          <p class="text-giga-cyan text-[12px] uppercase tracking-[2px] mb-4">ENTRANCE VARIANTS</p>
+          <div class="space-y-3">
+            <div class="flex items-start gap-3">
+              <span class="text-giga-gold text-[13px] shrink-0 w-[120px]">fadeUp</span>
+              <span class="text-giga-muted text-[13px]">y: 20 &rarr; 0, opacity 0 &rarr; 1</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-giga-gold text-[13px] shrink-0 w-[120px]">slideInLeft / Right</span>
+              <span class="text-giga-muted text-[13px]">x: &plusmn;30 &rarr; 0, opacity 0 &rarr; 1</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-giga-gold text-[13px] shrink-0 w-[120px]">scaleIn</span>
+              <span class="text-giga-muted text-[13px]">scale: 0.8 &rarr; 1, opacity 0 &rarr; 1</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-giga-gold text-[13px] shrink-0 w-[120px]">crtReveal</span>
+              <span class="text-giga-muted text-[13px]">blur: 6px &rarr; 0, brightness: 1.6 &rarr; 1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transition Presets -->
+        <div>
+          <p class="text-giga-cyan text-[12px] uppercase tracking-[2px] mb-4">TRANSITION PRESETS</p>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">sectionTransition</span>
+              <span class="text-giga-muted text-[13px]">0.5s easeOut</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">columnTransition</span>
+              <span class="text-giga-muted text-[13px]">0.6s easeOut</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">cardTransition</span>
+              <span class="text-giga-muted text-[13px]">0.4s easeOut</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">cycleTransition</span>
+              <span class="text-giga-muted text-[13px]">0.4s easeInOut</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Springs & Constants -->
+        <div>
+          <p class="text-giga-cyan text-[12px] uppercase tracking-[2px] mb-4">SPRINGS & CONSTANTS</p>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">SPRING</span>
+              <span class="text-giga-muted text-[13px]">stiffness: 400, damping: 30</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">SPRING_SOFT</span>
+              <span class="text-giga-muted text-[13px]">stiffness: 300, damping: 30</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">STAGGER</span>
+              <span class="text-giga-muted text-[13px]">0.08s delay increment</span>
+            </div>
+            <div class="flex items-center justify-between max-w-[360px]">
+              <span class="text-giga-gold text-[13px]">INVIEW_MARGIN</span>
+              <span class="text-giga-muted text-[13px]">-100px trigger offset</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div class="w-full h-px" style="background: linear-gradient(90deg, transparent 0%, rgba(4,131,171,0.4) 50%, transparent 100%);"></div>
+
+</body>
+</html>
