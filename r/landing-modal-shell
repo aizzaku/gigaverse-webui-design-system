@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "landing-modal-shell",
+  "type": "registry:ui",
+  "description": "LandingModalShell — branded Radix dialog with 3px teal/gold border, gradient header, and pixel close button.",
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "dialog"
+  ],
+  "files": [
+    {
+      "path": "components/ui/landing-modal-shell.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport * as DialogPrimitive from '@radix-ui/react-dialog'\nimport { X } from 'lucide-react'\nimport { cn } from '../lib/cn'\n\nexport type LandingModalAccent = 'teal' | 'gold'\nexport type LandingModalSize = 'sm' | 'lg'\n\nexport interface LandingModalShellProps\n  extends React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root> {\n  title?: React.ReactNode\n  accent?: LandingModalAccent\n  size?: LandingModalSize\n  trigger?: React.ReactNode\n  children?: React.ReactNode\n  closeAriaLabel?: string\n}\n\nexport function LandingModalShell({\n  title,\n  accent = 'teal',\n  size = 'sm',\n  trigger,\n  children,\n  closeAriaLabel = 'Close',\n  ...rootProps\n}: LandingModalShellProps) {\n  return (\n    <DialogPrimitive.Root {...rootProps}>\n      {trigger && <DialogPrimitive.Trigger asChild>{trigger}</DialogPrimitive.Trigger>}\n      <DialogPrimitive.Portal>\n        <DialogPrimitive.Overlay className=\"fixed inset-0 z-[90] bg-giga-overlay/90 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0\" />\n        <DialogPrimitive.Content\n          className={cn(\n            'fixed left-1/2 top-1/2 z-[91] w-full -translate-x-1/2 -translate-y-1/2',\n            'rounded-giga border-[3px] bg-giga-panel font-bitcell text-giga-heading',\n            'data-[state=open]:animate-in data-[state=closed]:animate-out',\n            'data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0',\n            'data-[state=open]:zoom-in-[0.96] data-[state=closed]:zoom-out-[0.96]',\n            'data-[state=open]:slide-in-from-bottom-6',\n            'focus-visible:outline-none',\n            size === 'sm' ? 'max-w-[440px]' : 'max-w-[960px]',\n            accent === 'teal'\n              ? 'border-giga-teal shadow-giga-modal-cyan'\n              : 'border-giga-gold/40 shadow-giga-modal-gold',\n          )}\n        >\n          <div\n            className={cn(\n              'flex items-center justify-between gap-4 rounded-t-[5px] px-6 py-4',\n              accent === 'teal' ? 'bg-giga-modal-teal-header' : 'bg-giga-modal-gold-header',\n            )}\n          >\n            {title && (\n              <DialogPrimitive.Title\n                className={cn(\n                  'font-bitcell text-[18px] uppercase tracking-[2px]',\n                  accent === 'teal' ? 'text-giga-cyan' : 'text-giga-gold',\n                )}\n              >\n                {title}\n              </DialogPrimitive.Title>\n            )}\n            <DialogPrimitive.Close\n              aria-label={closeAriaLabel}\n              className=\"ml-auto inline-flex h-7 w-7 items-center justify-center rounded-giga-sm border border-giga-border bg-giga-navy/60 text-giga-muted transition-colors hover:border-giga-cyan/50 hover:text-giga-heading focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan/40\"\n            >\n              <X className=\"h-4 w-4\" />\n            </DialogPrimitive.Close>\n          </div>\n          <div className=\"px-6 py-5\">{children}</div>\n        </DialogPrimitive.Content>\n      </DialogPrimitive.Portal>\n    </DialogPrimitive.Root>\n  )\n}\nLandingModalShell.displayName = 'LandingModalShell'\n",
+      "type": "registry:ui",
+      "target": "components/ui/landing-modal-shell.tsx"
+    }
+  ]
+}

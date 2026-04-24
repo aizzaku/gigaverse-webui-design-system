@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "description": "Date calendar — react-day-picker wrapped in Gigaverse theme (gold selected, teal ranges).",
+  "dependencies": [
+    "react-day-picker",
+    "date-fns",
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/calendar.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { ChevronLeft, ChevronRight } from 'lucide-react'\nimport {\n  DayPicker,\n  type DayPickerProps,\n  type DayPickerSingleProps,\n  type DayPickerMultipleProps,\n  type DayPickerRangeProps,\n} from 'react-day-picker'\nimport { cn } from '../lib/cn'\n\nexport type CalendarProps = DayPickerProps\n\nexport function Calendar({\n  className,\n  classNames,\n  showOutsideDays = true,\n  ...props\n}: CalendarProps) {\n  return (\n    <DayPicker\n      showOutsideDays={showOutsideDays}\n      className={cn('font-bitcell p-3 text-giga-heading', className)}\n      classNames={{\n        months: 'flex flex-col sm:flex-row gap-4 relative',\n        month: 'space-y-4',\n        month_caption: 'flex items-center justify-center pt-1 pb-2 relative',\n        caption_label: 'text-[14px] uppercase tracking-[2px] text-giga-gold',\n        nav: 'flex items-center gap-1',\n        button_previous: cn(\n          'absolute left-1 top-1 inline-flex h-7 w-7 items-center justify-center rounded-giga-sm',\n          'border border-giga-border bg-giga-panel text-giga-muted',\n          'transition-colors hover:border-giga-cyan/50 hover:text-giga-heading',\n          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan/40',\n        ),\n        button_next: cn(\n          'absolute right-1 top-1 inline-flex h-7 w-7 items-center justify-center rounded-giga-sm',\n          'border border-giga-border bg-giga-panel text-giga-muted',\n          'transition-colors hover:border-giga-cyan/50 hover:text-giga-heading',\n          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan/40',\n        ),\n        month_grid: 'w-full border-collapse',\n        weekdays: 'flex',\n        weekday:\n          'w-9 font-bitcell text-[11px] uppercase tracking-[2px] text-giga-muted',\n        week: 'flex w-full mt-1',\n        day: 'relative h-9 w-9 p-0 text-center focus-within:relative focus-within:z-20',\n        day_button: cn(\n          'inline-flex h-9 w-9 items-center justify-center rounded-giga-sm text-[14px]',\n          'text-giga-heading transition-colors',\n          'hover:bg-giga-teal/15 hover:text-giga-cyan',\n          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan/40',\n        ),\n        selected:\n          'bg-giga-gold text-giga-button-text font-bold rounded-giga-sm shadow-giga-bevel',\n        today: 'text-giga-gold',\n        outside: 'text-giga-muted/40 aria-selected:text-giga-muted/40',\n        disabled: 'text-giga-muted/30 line-through',\n        range_start: 'rounded-l-giga-sm',\n        range_end: 'rounded-r-giga-sm',\n        range_middle:\n          'bg-giga-teal/20 text-giga-heading rounded-none hover:bg-giga-teal/30',\n        hidden: 'invisible',\n        ...classNames,\n      }}\n      components={{\n        Chevron: ({ orientation, ...rest }) =>\n          orientation === 'left' ? (\n            <ChevronLeft className=\"h-4 w-4\" {...rest} />\n          ) : (\n            <ChevronRight className=\"h-4 w-4\" {...rest} />\n          ),\n      }}\n      {...props}\n    />\n  )\n}\nCalendar.displayName = 'Calendar'\n\n// Re-export useful props types for consumers.\nexport type { DayPickerSingleProps, DayPickerMultipleProps, DayPickerRangeProps }\n",
+      "type": "registry:ui",
+      "target": "components/ui/calendar.tsx"
+    }
+  ]
+}

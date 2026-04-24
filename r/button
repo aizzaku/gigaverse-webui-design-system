@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "description": "Gigaverse button — 8 variants incl. gold shimmer CTA, faction join, option card.",
+  "dependencies": [
+    "@radix-ui/react-slot",
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { Slot } from '@radix-ui/react-slot'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '../lib/cn'\n\nconst buttonBase =\n  'inline-flex items-center justify-center font-bitcell tracking-[2px] uppercase cursor-pointer ' +\n  'transition-colors transition-opacity transition-transform ' +\n  'active:scale-[0.98] disabled:opacity-60 disabled:pointer-events-none disabled:cursor-not-allowed ' +\n  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ' +\n  'focus-visible:ring-offset-giga-navy'\n\nexport const buttonVariants = cva(buttonBase, {\n  variants: {\n    variant: {\n      primary:\n        'relative overflow-hidden border-2 border-giga-gold text-giga-button-text font-bold ' +\n        'bg-giga-gold-grad shadow-giga-bevel hover:opacity-90 ' +\n        'focus-visible:ring-giga-gold/40',\n      secondary:\n        'rounded-giga-md border border-giga-cyan bg-giga-panel/80 text-giga-cyan ' +\n        'hover:bg-giga-teal/10 focus-visible:ring-giga-cyan/40',\n      tertiary:\n        'text-giga-muted bg-transparent border-0 hover:text-giga-heading ' +\n        'focus-visible:text-giga-heading focus-visible:underline focus-visible:underline-offset-4',\n      ghost:\n        'rounded-full border border-giga-border bg-giga-dark-card/80 text-giga-muted ' +\n        'hover:border-giga-cyan/50 hover:text-giga-heading ' +\n        'focus-visible:ring-giga-cyan/40',\n      acceptPill:\n        'rounded-full border-2 border-giga-gold bg-giga-gold-accept-grad text-giga-button-text ' +\n        'hover:opacity-90 focus-visible:ring-giga-gold/40',\n      tealPill:\n        'rounded-full border border-giga-cyan/70 bg-giga-teal/10 text-giga-cyan ' +\n        'hover:bg-giga-teal/20 focus-visible:ring-giga-cyan/40',\n      option:\n        'flex-col items-start text-left rounded-giga border-2 border-giga-teal/30 ' +\n        'bg-giga-panel/60 text-white hover:border-giga-cyan/60 ' +\n        'focus-visible:ring-giga-cyan/40',\n      destructive:\n        'rounded-giga-md border border-giga-live/70 bg-giga-live-bg/60 text-giga-live-text ' +\n        'hover:bg-giga-live-bg/80 focus-visible:ring-giga-live/40',\n    },\n    size: {\n      sm: 'h-8 px-5 text-[16px] tracking-[1.8px]',\n      md: 'h-10 px-6 text-[16px]',\n      lg: 'h-12 px-8 text-[20px] sm:text-[24px] sm:tracking-[3px] md:px-12',\n      pill: 'h-7 px-4 text-[10px] tracking-[1.6px]',\n      optionBox: 'min-h-[72px] px-5 py-3.5 text-[16px] tracking-wide normal-case',\n    },\n    shape: {\n      md: 'rounded-giga-md',\n      lg: 'rounded-giga',\n      full: 'rounded-full',\n      none: 'rounded-none',\n    },\n  },\n  compoundVariants: [\n    { variant: 'primary', shape: 'md', class: 'rounded-giga-md' },\n    { variant: 'tertiary', class: 'h-auto px-0' },\n  ],\n  defaultVariants: {\n    variant: 'primary',\n    size: 'md',\n    shape: 'md',\n  },\n})\n\nexport interface ButtonProps\n  extends React.ButtonHTMLAttributes<HTMLButtonElement>,\n    VariantProps<typeof buttonVariants> {\n  asChild?: boolean\n}\n\nexport const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(\n  ({ className, variant, size, shape, asChild = false, ...props }, ref) => {\n    const Comp = asChild ? Slot : 'button'\n    return (\n      <Comp\n        ref={ref}\n        className={cn(buttonVariants({ variant, size, shape }), className)}\n        {...props}\n      />\n    )\n  },\n)\nButton.displayName = 'Button'\n",
+      "type": "registry:ui",
+      "target": "components/ui/button.tsx"
+    }
+  ]
+}

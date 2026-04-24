@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:ui",
+  "description": "Card with 6 variants: standard, tweet, strip, recessed, panel, stat.",
+  "dependencies": [
+    "class-variance-authority",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "components/ui/card.tsx",
+      "content": "'use client'\n\nimport * as React from 'react'\nimport { cva, type VariantProps } from 'class-variance-authority'\nimport { cn } from '../lib/cn'\n\nexport const cardVariants = cva('font-bitcell text-white', {\n  variants: {\n    variant: {\n      standard: 'border rounded-giga-xl border-giga-border bg-giga-dark-card/85',\n      tweet:\n        'border rounded-giga-xl border-giga-border bg-giga-panel transition-colors hover:border-giga-muted/40',\n      strip: 'border rounded-giga-strip border-giga-border bg-giga-dark-card/80',\n      recessed: 'border rounded-giga border-giga-border/50 bg-giga-dark-card/50',\n      panel: 'overflow-hidden rounded-giga-3xl',\n      stat: 'bg-giga-dark-card/92',\n    },\n    padding: {\n      none: 'p-0',\n      sm: 'p-3',\n      md: 'p-5',\n      lg: 'p-6',\n    },\n  },\n  defaultVariants: { variant: 'standard', padding: 'md' },\n})\n\nexport interface CardProps\n  extends React.HTMLAttributes<HTMLDivElement>,\n    VariantProps<typeof cardVariants> {}\n\nexport const Card = React.forwardRef<HTMLDivElement, CardProps>(\n  ({ className, variant, padding, ...props }, ref) => (\n    <div ref={ref} className={cn(cardVariants({ variant, padding }), className)} {...props} />\n  ),\n)\nCard.displayName = 'Card'\n\nexport const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn('flex flex-col gap-1', className)} {...props} />\n  ),\n)\nCardHeader.displayName = 'CardHeader'\n\nexport const CardTitle = React.forwardRef<\n  HTMLHeadingElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, ...props }, ref) => (\n  <h3\n    ref={ref}\n    className={cn('text-[20px] text-giga-heading tracking-wide', className)}\n    {...props}\n  />\n))\nCardTitle.displayName = 'CardTitle'\n\nexport const CardDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <p ref={ref} className={cn('text-[14px] text-giga-muted', className)} {...props} />\n))\nCardDescription.displayName = 'CardDescription'\n\nexport const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => <div ref={ref} className={cn('mt-3', className)} {...props} />,\n)\nCardContent.displayName = 'CardContent'\n\nexport const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n  ({ className, ...props }, ref) => (\n    <div ref={ref} className={cn('mt-4 flex items-center gap-2', className)} {...props} />\n  ),\n)\nCardFooter.displayName = 'CardFooter'\n",
+      "type": "registry:ui",
+      "target": "components/ui/card.tsx"
+    }
+  ]
+}
