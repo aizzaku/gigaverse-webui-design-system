@@ -66,11 +66,19 @@ export const PixelButton = React.forwardRef<HTMLButtonElement, PixelButtonProps>
         className={cn(pixelButtonVariants({ variant, size }), className)}
         {...props}
       >
-        <div
+        {/* pixel side borders */}
+        <span
           className={cn('absolute inset-0 pointer-events-none', PIXEL_X, borderColor)}
           aria-hidden
         />
-        {children}
+        {/* shimmer sweep on primary */}
+        {variant === 'primary' && (
+          <span
+            className="absolute inset-0 pointer-events-none bg-giga-shimmer bg-[length:200%_100%] animate-giga-shimmer"
+            aria-hidden
+          />
+        )}
+        <span className="relative">{children}</span>
       </Comp>
     )
   },

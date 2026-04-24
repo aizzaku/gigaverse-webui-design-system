@@ -19,12 +19,11 @@ export const PixelSwitch = React.forwardRef<
       'border-giga-teal/50 bg-giga-panel/70 transition-colors',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',
       'disabled:cursor-not-allowed disabled:opacity-50',
-      'data-[state=checked]:border-giga-gold data-[state=checked]:bg-giga-gold-pixel-grad',
+      'data-[state=checked]:border-giga-gold data-[state=checked]:bg-giga-gold-grad',
       className,
     )}
     {...props}
   >
-    {/* pixel side borders — synced with checked state via group */}
     <span
       className={cn(
         'absolute inset-0 pointer-events-none',

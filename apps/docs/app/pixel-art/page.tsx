@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 import {
-  // Original
   Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
   Button,
   Badge,
@@ -15,7 +14,6 @@ import {
   Pagination, PaginationContent, PaginationItem, PaginationLink,
   PaginationPrevious, PaginationNext, PaginationEllipsis,
   Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,
-  // Pixel variants
   PixelCard, PixelCardHeader, PixelCardTitle, PixelCardDescription,
   PixelCardContent, PixelCardFooter,
   PixelButton,
@@ -45,81 +43,140 @@ const ALL_FACTIONS = [
   'foxglove', 'chobo', 'summoner', 'gigus',
 ] as const
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+// ---------------------------------------------------------------------------
+// Layout primitives
+// ---------------------------------------------------------------------------
+
+function SectionTag({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-bitcell text-[10px] tracking-[3px] uppercase text-giga-muted mb-3">
+    <span className="font-bitcell text-[9px] tracking-[3px] uppercase text-giga-muted/60">
       {children}
-    </p>
+    </span>
   )
 }
 
-function CompareRow({ label, original, pixel }: {
+function ColLabel({ accent, children }: { accent?: boolean; children: React.ReactNode }) {
+  return (
+    <div className={`flex items-center gap-2 font-bitcell text-[11px] tracking-[2.5px] uppercase ${accent ? 'text-giga-cyan' : 'text-giga-gold'}`}>
+      <div className={`h-px flex-1 ${accent ? 'bg-giga-cyan/30' : 'bg-giga-gold/30'}`} />
+      {children}
+      <div className={`h-px flex-1 ${accent ? 'bg-giga-cyan/30' : 'bg-giga-gold/30'}`} />
+    </div>
+  )
+}
+
+function CompareRow({
+  label,
+  description,
+  original,
+  pixel,
+  verticalItems = false,
+}: {
   label: string
+  description?: string
   original: React.ReactNode
   pixel: React.ReactNode
+  verticalItems?: boolean
 }) {
   return (
-    <div className="grid grid-cols-2 gap-8 py-6 border-b border-giga-border/20">
-      <div>
-        <SectionLabel>Original — {label}</SectionLabel>
-        <div className="flex flex-wrap items-start gap-3">{original}</div>
+    <div className="grid grid-cols-2 gap-10 py-8 border-b border-giga-border/20">
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <SectionTag>Original</SectionTag>
+          <span className="font-bitcell text-[12px] tracking-[2px] uppercase text-giga-heading">
+            {label}
+          </span>
+        </div>
+        {description && (
+          <p className="font-m5x7 text-[12px] text-giga-muted/70 leading-relaxed">{description}</p>
+        )}
+        <div className={`flex ${verticalItems ? 'flex-col' : 'flex-wrap'} items-start gap-2`}>
+          {original}
+        </div>
       </div>
-      <div>
-        <SectionLabel>Pixel Art — {label}</SectionLabel>
-        <div className="flex flex-wrap items-start gap-3">{pixel}</div>
+      <div className="flex flex-col gap-3">
+        <div className="flex items-center gap-3">
+          <SectionTag>Pixel Art</SectionTag>
+          <span className="font-bitcell text-[12px] tracking-[2px] uppercase text-giga-cyan">
+            {label}
+          </span>
+        </div>
+        {description && (
+          <p className="font-m5x7 text-[12px] text-giga-muted/70 leading-relaxed invisible">{description}</p>
+        )}
+        <div className={`flex ${verticalItems ? 'flex-col' : 'flex-wrap'} items-start gap-2`}>
+          {pixel}
+        </div>
       </div>
     </div>
   )
 }
 
+// ---------------------------------------------------------------------------
+// Page
+// ---------------------------------------------------------------------------
+
 export default function PixelArtPage() {
   return (
-    <main className="mx-auto max-w-[1200px] px-8 py-12">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="font-bitcell text-[28px] tracking-[3px] uppercase text-giga-heading mb-2">
-          Pixel Art Borders
-        </h1>
-        <p className="text-giga-muted text-[14px] font-m5x7">
-          8bitcn-inspired notched corners vs. current rounded system. Same colors, different
-          edge treatment. Vote in <span className="text-giga-cyan">#design-system</span>.
-        </p>
-      </div>
+    <main className="mx-auto max-w-[1280px] px-10 py-14">
 
-      {/* Column headers */}
-      <div className="grid grid-cols-2 gap-8 border-b border-giga-gold/30 pb-3">
-        <h2 className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-gold">Current (Rounded)</h2>
-        <h2 className="font-bitcell text-[14px] tracking-[2px] uppercase text-giga-cyan">Pixel Art (Notched)</h2>
+      {/* ── PAGE HEADER ── */}
+      <div className="mb-10 pb-8 border-b border-giga-border/30">
+        <div className="flex items-start justify-between">
+          <div>
+            <h1 className="font-bitcell text-[26px] tracking-[3px] uppercase text-giga-heading mb-2">
+              Pixel Art Borders
+            </h1>
+            <p className="font-m5x7 text-[15px] text-giga-muted max-w-xl leading-relaxed">
+              8bitcn-inspired NES-style notched corners vs. our current rounded system.
+              Same color tokens — only the border treatment changes.
+              Drop a vote in <span className="text-giga-cyan font-semibold">#design-system</span>.
+            </p>
+          </div>
+          <div className="flex flex-col gap-1 text-right shrink-0">
+            <span className="font-bitcell text-[10px] tracking-[2px] uppercase text-giga-muted/50">branch</span>
+            <span className="font-m5x7 text-[13px] text-giga-cyan">feature/pixel-art-borders</span>
+          </div>
+        </div>
+
+        {/* Column key */}
+        <div className="grid grid-cols-2 gap-10 mt-8">
+          <ColLabel>Current — Rounded Corners</ColLabel>
+          <ColLabel accent>Pixel Art — Notched Corners</ColLabel>
+        </div>
       </div>
 
       {/* ── CARDS ── */}
       <CompareRow
         label="Card"
+        description="Standard container card with header, content, footer."
         original={
-          <Card variant="standard" className="w-60">
+          <Card variant="standard" className="w-64">
             <CardHeader>
               <CardTitle>Card Title</CardTitle>
-              <CardDescription>Standard gigaverse card.</CardDescription>
+              <CardDescription>Standard gigaverse card with rounded corners.</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-[13px] text-giga-muted font-m5x7">Content goes here.</p>
+              <p className="text-[13px] text-giga-muted font-m5x7">Body content area.</p>
             </CardContent>
             <CardFooter>
               <Badge variant="cyan">Tag</Badge>
+              <Badge variant="gold">Premium</Badge>
             </CardFooter>
           </Card>
         }
         pixel={
-          <PixelCard variant="standard" className="w-60">
+          <PixelCard variant="standard" className="w-64">
             <PixelCardHeader>
               <PixelCardTitle>Card Title</PixelCardTitle>
-              <PixelCardDescription>Pixel art card.</PixelCardDescription>
+              <PixelCardDescription>Pixel art card with notched corners.</PixelCardDescription>
             </PixelCardHeader>
             <PixelCardContent>
-              <p className="text-[13px] text-giga-muted font-m5x7">Content goes here.</p>
+              <p className="text-[13px] text-giga-muted font-m5x7">Body content area.</p>
             </PixelCardContent>
             <PixelCardFooter>
               <PixelBadge variant="cyan">Tag</PixelBadge>
+              <PixelBadge variant="gold">Premium</PixelBadge>
             </PixelCardFooter>
           </PixelCard>
         }
@@ -128,6 +185,7 @@ export default function PixelArtPage() {
       {/* ── BUTTONS ── */}
       <CompareRow
         label="Buttons"
+        description="Primary uses the hard-stop two-tone gradient on this branch."
         original={
           <>
             <Button variant="primary">Primary</Button>
@@ -155,8 +213,10 @@ export default function PixelArtPage() {
             <Badge variant="cyan">Cyan</Badge>
             <Badge variant="green">Green</Badge>
             <Badge variant="live">Live</Badge>
+            <Badge variant="rarity" rarity="uncommon">Uncommon</Badge>
+            <Badge variant="rarity" rarity="rare">Rare</Badge>
             <Badge variant="rarity" rarity="epic">Epic</Badge>
-            <Badge variant="rarity" rarity="legendary">Legend</Badge>
+            <Badge variant="rarity" rarity="legendary">Legendary</Badge>
             <Badge variant="rarity" rarity="giga">Giga</Badge>
           </>
         }
@@ -166,8 +226,10 @@ export default function PixelArtPage() {
             <PixelBadge variant="cyan">Cyan</PixelBadge>
             <PixelBadge variant="green">Green</PixelBadge>
             <PixelBadge variant="live">Live</PixelBadge>
+            <PixelBadge variant="rarity" rarity="uncommon">Uncommon</PixelBadge>
+            <PixelBadge variant="rarity" rarity="rare">Rare</PixelBadge>
             <PixelBadge variant="rarity" rarity="epic">Epic</PixelBadge>
-            <PixelBadge variant="rarity" rarity="legendary">Legend</PixelBadge>
+            <PixelBadge variant="rarity" rarity="legendary">Legendary</PixelBadge>
             <PixelBadge variant="rarity" rarity="giga">Giga</PixelBadge>
           </>
         }
@@ -176,6 +238,7 @@ export default function PixelArtPage() {
       {/* ── FACTION CHIPS ── */}
       <CompareRow
         label="Faction Chips"
+        description="Shiny gradient chips — used for faction selectors and tags."
         original={
           <div className="flex flex-wrap gap-2">
             {ALL_FACTIONS.map((f) => (
@@ -195,6 +258,7 @@ export default function PixelArtPage() {
       {/* ── FACTION JOIN BUTTONS ── */}
       <CompareRow
         label="Faction Join Buttons"
+        description="Full-width CTA buttons with faction-specific gradients and shimmer."
         original={
           <div className="flex flex-wrap gap-2">
             {ALL_FACTIONS.map((f) => (
@@ -214,108 +278,122 @@ export default function PixelArtPage() {
       {/* ── CHECKBOXES ── */}
       <CompareRow
         label="Checkboxes"
+        verticalItems
         original={
-          <div className="flex flex-col gap-3">
-            <label className="flex items-center gap-2 cursor-pointer">
+          <>
+            <label className="flex items-center gap-3 cursor-pointer">
               <Checkbox />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Unchecked</span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-3 cursor-pointer">
               <Checkbox defaultChecked />
-              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-heading">Checked</span>
+              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-gold">Checked</span>
             </label>
-            <label className="flex items-center gap-2 opacity-50">
+            <label className="flex items-center gap-3 opacity-40">
               <Checkbox disabled />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Disabled</span>
             </label>
-          </div>
+          </>
         }
         pixel={
-          <div className="flex flex-col gap-3">
-            <label className="flex items-center gap-2 cursor-pointer">
+          <>
+            <label className="flex items-center gap-3 cursor-pointer">
               <PixelCheckbox />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Unchecked</span>
             </label>
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-3 cursor-pointer">
               <PixelCheckbox defaultChecked />
-              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-heading">Checked</span>
+              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-gold">Checked</span>
             </label>
-            <label className="flex items-center gap-2 opacity-50">
+            <label className="flex items-center gap-3 opacity-40">
               <PixelCheckbox disabled />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Disabled</span>
             </label>
-          </div>
+          </>
         }
       />
 
       {/* ── SWITCH ── */}
       <CompareRow
         label="Switch"
+        verticalItems
         original={
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
+          <>
+            <div className="flex items-center gap-4">
               <Switch />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Off</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <Switch defaultChecked />
-              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-heading">On</span>
+              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-gold">On</span>
             </div>
-          </div>
+          </>
         }
         pixel={
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
+          <>
+            <div className="flex items-center gap-4">
               <PixelSwitch />
               <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-muted">Off</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <PixelSwitch defaultChecked />
-              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-heading">On</span>
+              <span className="font-bitcell text-[11px] tracking-[1.5px] uppercase text-giga-gold">On</span>
             </div>
-          </div>
+          </>
         }
       />
 
       {/* ── SLIDER ── */}
       <CompareRow
         label="Slider"
+        description="Track fill uses progress gradient. Thumb uses gold bevel."
         original={
-          <div className="w-56 flex flex-col gap-4">
-            <Slider defaultValue={[40]} max={100} />
-            <Slider defaultValue={[70]} max={100} />
+          <div className="w-60 flex flex-col gap-6 pt-1">
+            <Slider defaultValue={[35]} max={100} />
+            <Slider defaultValue={[72]} max={100} />
           </div>
         }
         pixel={
-          <div className="w-56 flex flex-col gap-4">
-            <PixelSlider defaultValue={[40]} max={100} />
-            <PixelSlider defaultValue={[70]} max={100} />
+          <div className="w-60 flex flex-col gap-6 pt-1">
+            <PixelSlider defaultValue={[35]} max={100} />
+            <PixelSlider defaultValue={[72]} max={100} />
           </div>
         }
       />
 
       {/* ── ARROWS ── */}
-      <div className="py-6 border-b border-giga-border/20">
-        <SectionLabel>Pixel Art — Arrows &amp; Arrow Buttons</SectionLabel>
-        <div className="flex flex-wrap items-center gap-6">
-          <div className="flex items-center gap-3">
-            <PixelChevronLeft className="h-4 w-4 text-giga-muted" />
-            <PixelChevronRight className="h-4 w-4 text-giga-muted" />
-            <PixelChevronUp className="h-4 w-4 text-giga-muted" />
-            <PixelChevronDown className="h-4 w-4 text-giga-muted" />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">icons</span>
+      <div className="py-8 border-b border-giga-border/20">
+        <div className="flex items-center gap-3 mb-4">
+          <SectionTag>Pixel Art Only</SectionTag>
+          <span className="font-bitcell text-[12px] tracking-[2px] uppercase text-giga-cyan">
+            Arrows &amp; Arrow Buttons
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-8">
+          <div className="flex flex-col gap-2">
+            <SectionTag>Icons</SectionTag>
+            <div className="flex items-center gap-4 p-3 rounded bg-giga-panel/30">
+              <PixelChevronLeft className="h-4 w-4 text-giga-muted" />
+              <PixelChevronRight className="h-4 w-4 text-giga-muted" />
+              <PixelChevronUp className="h-4 w-4 text-giga-muted" />
+              <PixelChevronDown className="h-4 w-4 text-giga-muted" />
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <PixelArrowButton direction="left" />
-            <PixelArrowButton direction="right" />
-            <PixelArrowButton direction="up" />
-            <PixelArrowButton direction="down" />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">buttons</span>
+          <div className="flex flex-col gap-2">
+            <SectionTag>Buttons</SectionTag>
+            <div className="flex items-center gap-2">
+              <PixelArrowButton direction="left" />
+              <PixelArrowButton direction="right" />
+              <PixelArrowButton direction="up" />
+              <PixelArrowButton direction="down" />
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <PixelArrowButton direction="left" disabled />
-            <PixelArrowButton direction="right" disabled />
-            <span className="font-bitcell text-[10px] tracking-widest text-giga-muted uppercase ml-1">disabled</span>
+          <div className="flex flex-col gap-2">
+            <SectionTag>Disabled</SectionTag>
+            <div className="flex items-center gap-2">
+              <PixelArrowButton direction="left" disabled />
+              <PixelArrowButton direction="right" disabled />
+            </div>
           </div>
         </div>
       </div>
@@ -323,13 +401,14 @@ export default function PixelArtPage() {
       {/* ── PROGRESS BARS ── */}
       <CompareRow
         label="Progress Bar"
+        description="Step bar + continuous fill. Pixel version uses the notched track."
         original={
-          <div className="w-64 flex flex-col gap-5">
+          <div className="w-64 flex flex-col gap-5 pt-1">
             <StepProgressBar steps={STEPS} current={1} />
           </div>
         }
         pixel={
-          <div className="w-64 flex flex-col gap-5">
+          <div className="w-64 flex flex-col gap-5 pt-1">
             <PixelStepProgressBar steps={STEPS} current={1} />
             <PixelProgress value={65} className="h-3 w-full" />
           </div>
@@ -337,32 +416,40 @@ export default function PixelArtPage() {
       />
 
       {/* ── BLOCK PROGRESS / LOADING ── */}
-      <div className="py-6 border-b border-giga-border/20">
-        <SectionLabel>Pixel Art — Block Progress &amp; Loading Bars</SectionLabel>
-        <div className="flex flex-col gap-4 max-w-sm">
+      <div className="py-8 border-b border-giga-border/20">
+        <div className="flex items-center gap-3 mb-5">
+          <SectionTag>Pixel Art Only</SectionTag>
+          <span className="font-bitcell text-[12px] tracking-[2px] uppercase text-giga-cyan">
+            Block Progress &amp; Loading Bars
+          </span>
+        </div>
+        <p className="font-m5x7 text-[12px] text-giga-muted/70 mb-6">
+          Discrete segmented blocks — replaces smooth fills with an 8-bit health/XP bar aesthetic.
+        </p>
+        <div className="grid grid-cols-2 gap-x-10 gap-y-5">
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">GOLD — 7/10</p>
-            <PixelBlockProgress segments={10} filled={7} color="gold" blockHeight="h-3" />
+            <SectionTag>Gold — 7/10</SectionTag>
+            <div className="mt-2"><PixelBlockProgress segments={10} filled={7} color="gold" blockHeight="h-3" /></div>
           </div>
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">CYAN — 4/10</p>
-            <PixelBlockProgress segments={10} filled={4} color="cyan" blockHeight="h-3" />
+            <SectionTag>Cyan — 4/10</SectionTag>
+            <div className="mt-2"><PixelBlockProgress segments={10} filled={4} color="cyan" blockHeight="h-3" /></div>
           </div>
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">GREEN — 9/10</p>
-            <PixelBlockProgress segments={10} filled={9} color="green" blockHeight="h-3" />
+            <SectionTag>Green — 9/10</SectionTag>
+            <div className="mt-2"><PixelBlockProgress segments={10} filled={9} color="green" blockHeight="h-3" /></div>
           </div>
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LIVE — 3/8</p>
-            <PixelBlockProgress segments={8} filled={3} color="live" blockHeight="h-4" />
+            <SectionTag>Live — 3/8</SectionTag>
+            <div className="mt-2"><PixelBlockProgress segments={8} filled={3} color="live" blockHeight="h-3" /></div>
           </div>
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LOADING (animated)</p>
-            <PixelLoadingBar segments={12} color="gold" blockHeight="h-3" />
+            <SectionTag>Loading (animated pingpong)</SectionTag>
+            <div className="mt-2"><PixelLoadingBar segments={12} color="gold" blockHeight="h-3" /></div>
           </div>
           <div>
-            <p className="font-bitcell text-[9px] tracking-widest uppercase text-giga-muted/60 mb-1.5">LOADING CYAN</p>
-            <PixelLoadingBar segments={12} color="cyan" blockHeight="h-3" speed={900} />
+            <SectionTag>Loading cyan</SectionTag>
+            <div className="mt-2"><PixelLoadingBar segments={12} color="cyan" blockHeight="h-3" speed={900} /></div>
           </div>
         </div>
       </div>
@@ -399,14 +486,15 @@ export default function PixelArtPage() {
       {/* ── CAROUSEL ── */}
       <CompareRow
         label="Carousel"
+        description="Two full cards visible at once. Embla for swipe/scroll."
         original={
           <div className="relative w-full px-14">
             <Carousel opts={{ align: 'start' }}>
               <CarouselContent>
-                {['Card A', 'Card B', 'Card C'].map((label) => (
-                  <CarouselItem key={label} className="basis-[80%]">
-                    <Card variant="standard" padding="md" className="text-center">
-                      <CardTitle>{label}</CardTitle>
+                {['Alpha', 'Beta', 'Gamma', 'Delta'].map((label) => (
+                  <CarouselItem key={label} className="basis-1/2">
+                    <Card variant="standard" padding="sm" className="text-center">
+                      <CardTitle className="text-[16px]">{label}</CardTitle>
                       <CardDescription>Slide content</CardDescription>
                     </Card>
                   </CarouselItem>
@@ -421,10 +509,10 @@ export default function PixelArtPage() {
           <div className="relative w-full px-14">
             <PixelCarousel opts={{ align: 'start' }}>
               <PixelCarouselContent>
-                {['Card A', 'Card B', 'Card C'].map((label) => (
-                  <PixelCarouselItem key={label} className="basis-[80%]">
-                    <PixelCard variant="standard" padding="md" className="text-center">
-                      <PixelCardTitle>{label}</PixelCardTitle>
+                {['Alpha', 'Beta', 'Gamma', 'Delta'].map((label) => (
+                  <PixelCarouselItem key={label} className="basis-1/2">
+                    <PixelCard variant="standard" padding="sm" className="text-center">
+                      <PixelCardTitle className="text-[16px]">{label}</PixelCardTitle>
                       <PixelCardDescription>Slide content</PixelCardDescription>
                     </PixelCard>
                   </PixelCarouselItem>
@@ -438,20 +526,29 @@ export default function PixelArtPage() {
       />
 
       {/* ── GENERIC PIXEL BORDER ── */}
-      <div className="py-6">
-        <SectionLabel>Pixel Border — Generic Section Wrapper</SectionLabel>
-        <div className="flex flex-col gap-4 max-w-lg">
+      <div className="py-8">
+        <div className="flex items-center gap-3 mb-5">
+          <SectionTag>Pixel Art Only</SectionTag>
+          <span className="font-bitcell text-[12px] tracking-[2px] uppercase text-giga-cyan">
+            PixelBorder — Generic Wrapper
+          </span>
+        </div>
+        <p className="font-m5x7 text-[12px] text-giga-muted/70 mb-5">
+          Drop-in container for sections, tooltips, panels — any surface that needs a pixel frame.
+        </p>
+        <div className="flex flex-col gap-4 max-w-md">
           <PixelBorder className="p-4 bg-giga-panel/40">
-            <p className="font-m5x7 text-[14px] text-giga-muted">Teal pixel border (default)</p>
+            <p className="font-m5x7 text-[13px] text-giga-muted">Default — teal 6px notch</p>
           </PixelBorder>
           <PixelBorder borderClass="border-giga-gold" className="p-4 bg-giga-panel/40">
-            <p className="font-m5x7 text-[14px] text-giga-muted">Gold pixel border</p>
+            <p className="font-m5x7 text-[13px] text-giga-muted">Gold variant</p>
           </PixelBorder>
           <PixelBorder size="sm" borderClass="border-giga-cyan/60" className="p-3 bg-giga-panel/40">
-            <p className="font-m5x7 text-[14px] text-giga-muted">Small (4px) cyan — tooltips / compact panels</p>
+            <p className="font-m5x7 text-[13px] text-giga-muted">Small 4px — compact panels / tooltips</p>
           </PixelBorder>
         </div>
       </div>
+
     </main>
   )
 }

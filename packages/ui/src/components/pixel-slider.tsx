@@ -16,7 +16,6 @@ export const PixelSlider = React.forwardRef<
     className={cn('relative flex w-full touch-none select-none items-center', className)}
     {...props}
   >
-    {/* Track with pixel border */}
     <SliderPrimitive.Track
       className={cn(
         'relative h-2 w-full grow rounded-none bg-giga-panel',
@@ -24,28 +23,21 @@ export const PixelSlider = React.forwardRef<
         'border-giga-border',
       )}
     >
-      {/* pixel side borders for track */}
       <span
-        className={cn(
-          'absolute inset-0 pointer-events-none rounded-none',
-          TRACK_X,
-          'border-giga-border',
-        )}
+        className={cn('absolute inset-0 pointer-events-none', TRACK_X, 'border-giga-border')}
         aria-hidden
       />
-      <SliderPrimitive.Range className="absolute h-full bg-giga-gold-pixel-grad" />
+      <SliderPrimitive.Range className="absolute h-full bg-giga-progress-grad" />
     </SliderPrimitive.Track>
 
-    {/* Square thumb with pixel border */}
     <SliderPrimitive.Thumb
       className={cn(
         'relative block h-5 w-5 rounded-none',
-        'border-y-[4px] border-giga-gold bg-giga-gold-pixel-grad shadow-giga-bevel',
+        'border-y-[4px] border-giga-gold bg-giga-gold-grad shadow-giga-bevel',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-giga-cyan',
         'disabled:pointer-events-none disabled:opacity-50',
       )}
     >
-      {/* pixel side borders for thumb */}
       <span
         className={cn('absolute inset-0 pointer-events-none', TRACK_X, 'border-giga-gold')}
         aria-hidden

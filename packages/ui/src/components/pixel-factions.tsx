@@ -54,6 +54,10 @@ export const PixelFactionBadge = React.forwardRef<HTMLButtonElement, PixelFactio
           style={{ borderColor: primary }}
           aria-hidden
         />
+        <span
+          className="absolute inset-0 pointer-events-none bg-giga-shimmer bg-[length:200%_100%] animate-giga-shimmer"
+          aria-hidden
+        />
         <span className="relative z-10">{children ?? faction.toUpperCase()}</span>
       </Comp>
     )
@@ -100,6 +104,10 @@ export const PixelFactionJoinButton = React.forwardRef<
       <span
         className={cn('absolute inset-0 pointer-events-none', PIXEL_X)}
         style={{ borderColor: primary }}
+        aria-hidden
+      />
+      <span
+        className="absolute inset-0 pointer-events-none bg-giga-shimmer bg-[length:200%_100%] animate-giga-shimmer"
         aria-hidden
       />
       <span className="relative z-10">{children ?? `JOIN ${faction.toUpperCase()}`}</span>
