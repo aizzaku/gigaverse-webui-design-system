@@ -247,7 +247,7 @@ export default function PixelArtPage() {
           </div>
         }
         pixel={
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-4">
             {ALL_FACTIONS.map((f) => (
               <PixelFactionBadge key={f} faction={f} />
             ))}
@@ -267,7 +267,7 @@ export default function PixelArtPage() {
           </div>
         }
         pixel={
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-6">
             {ALL_FACTIONS.map((f) => (
               <PixelFactionJoinButton key={f} faction={f} />
             ))}
